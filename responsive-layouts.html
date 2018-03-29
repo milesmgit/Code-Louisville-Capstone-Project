@@ -1,0 +1,148 @@
+
+<!-- ================================================================================================================================================================================
+
+     ================================================================================================================================================================================ -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Web Design Basics</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">  <!--I list this css file second in case I need to override the normalize.css file, as the last file listed takes precedence in the css stack -->
+
+
+  </head>
+
+  <body>
+    <!-- main nav consisting of dropdown menus and collapsing menu using bootstrap -->
+    <nav class="navbar navbar-expand-md navbar-light bg-info">
+      <a class="navbar-brand order-1" href="index.html">&lt;&nbsp;Web <span class="design_span">&nbsp;Design&nbsp;</span> &gt;</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              General Web Design
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="jquery-basics.html">jQuery Basics</a>
+              <div class="dropdown-divider"></div>
+              <a href="bootstrap-4-basics.html">Bootstrap 4 Basics</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              HTML
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="html.html">HTML Forms</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              CSS
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="css.html">CSS Basics</a>
+              <div class="dropdown-divider"></div>
+              <a href="responsive-layouts.html">CSS Responsive Layouts</a>
+              <div class="dropdown-divider"></div>
+              <a href="css-flexbox-layout.html">CSS Flexbox Layout</a>
+              <div class="dropdown-divider"></div>
+              <a href="css-selectors.html">CSS Selectors</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              JavaScript
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="javascript.html">JavaScript: Loops Arrays and Objects</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Background Color
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="#" onclick="lightblue()">Light Blue</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" onclick="lightgrey()">Light Grey</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" onclick="white()">White</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+      <div class="container" id='option'>
+        <h1 id="top">Responsive Layouts</h1>
+        <ul class="in-page-nav">
+          <li><a href="#one">Stage One: Responsive Theory</a></li>
+          <li><a href="#two">Stage Two: Media Queries</a></li>
+          <li><a href="#three">Stage Three: Responsive Patterns</a></li>
+        </ul>
+
+        <div>  <!--Stage One Div -->
+          <h2 id="one">Stage One: Responsive Theory</h2>
+          <h3>What is Responsive Web Design</h3>
+          <p>Responsive Web Design consists of fluid grids, fluid images, and media queries.</p>
+          <p>It is important to think in terms of ratios, rems, ems and or percentages when designing elements for various screens so that the elements can respond intelligently and adjust accordingly.</p>
+          <p>Elements that use percentages apply those percentages to their parent container's dimensions.</p>
+        </div> <!-- End Stage One Div-->
+
+        <div>  <!-- Stage Two Div -->
+          <h2 id="two">Stage Two: Media Queries</h2>
+          <h3>Media Query Review</h3>
+          <p>Media Queries are CSS rules that use CSS code to style a page only when certain conditions are met; these conditions are known as Media Features, and are usually based on a screen's minimum-width.</p>
+          <p>https://developer/mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries is a good place ot learn about media features.</p>
+          <p><em>Orientation</em> is a handy media feature for detecting whether or not a phone is displaying content using landscape or portrait mode.</p>
+          <p>Example media query targeting landscape orientation to prevent unecessary scrolling due to large headers taking up too much height:  <em>@media only screen and (min-width, 768px), only screen and (min-width: 700px) and (orientation: landscape) { apply css rules as needed here; }</em></p>
+
+          <h3>Understanding Breakpoints</h3>
+          <p>Breakpoints can be thought of in terms of width; it's that point in a screen's width where the layout no longer works and the screen elements breakdown and go all wacky. Generally, any media queries that adjusts the layout based upon the width can be thought of as a breakpoint.</p>
+          <p>Creating breakpoints based upon certain thresholds that affect the appeal of our one-column, mobile-first approach is a more sustainable technique than building for device screen-sizes.</p>
+          <p>Breakpoints generally don't add a time cost to the site, though they do add to the overall complexity of the code.</p>
+        </div> <!-- End Stage Two Div-->
+
+        <div>  <!--Stage Three Div -->
+          <h2 id="three">Stage Three: Responsive Patterns</h2>
+          <h3>Responsive Design Patterns</h3>
+          <p>Full screen background, pagination and image carasels require the designer to think about how each atomic piece fits in the overall design at each breakpoint.</p>
+          <p>The future of responsive grids is in "Flexbox"; CSS Tricks provides "A Complete Guide to Flexbox at their website:  https://css/tricks.com/snippets/css/a-guide-to-flexbox/</p>
+        </div> <!-- End Stage Three Div-->
+      </div> <!-- closing .container div  -->
+    </div>   <!-- closing .wrap div -->
+
+
+    <!-- bg-info is bootstrap reference for a blue color-->
+    <footer class="main-footer bg-info">
+      <span>&copy; 2017 Matthew Miles</span>
+      <a href='#top' class='to-top'>To top</a>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+
+</html>

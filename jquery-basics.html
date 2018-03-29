@@ -1,0 +1,403 @@
+<!-- ================================================================================================================================================================================
+
+     ================================================================================================================================================================================ -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Web Design</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">  <!--I list this css file second in case I need to override the normalize.css file, as the last file listed takes precedence in the css stack -->
+    <script src="js/jQuery Development Uncompressed/jquery-3.2.1.js"></script>
+    <!-- if offline, use this for development, also, when coding inPage scripts
+    make sure to have the jQuery reference at the top of the page, else the
+    jQuery reference calls won't be defined, and therefore the scripts
+    won't run.-->
+  </head>
+
+  <body>
+
+    <!-- main nav consisting of dropdown menus and collapsing menu using bootstrap -->
+    <nav class="navbar navbar-expand-md navbar-light bg-info">
+      <a class="navbar-brand order-1" href="index.html">&lt;&nbsp;Web <span class="design_span">&nbsp;Design&nbsp;</span> &gt;</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              General Web Design
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="jquery-basics.html">jQuery Basics</a>
+              <div class="dropdown-divider"></div>
+              <a href="bootstrap-4-basics.html">Bootstrap 4 Basics</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              HTML
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="html.html">HTML Forms</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              CSS
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="css.html">CSS Basics</a>
+              <div class="dropdown-divider"></div>
+              <a href="responsive-layouts.html">CSS Responsive Layouts</a>
+              <div class="dropdown-divider"></div>
+              <a href="css-flexbox-layout.html">CSS Flexbox Layout</a>
+              <div class="dropdown-divider"></div>
+              <a href="css-selectors.html">CSS Selectors</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              JavaScript
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="javascript.html">JavaScript: Loops Arrays and Objects</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Background Color
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="#" onclick="lightblue()">Light Blue</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" onclick="lightgrey()">Light Grey</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" onclick="white()">White</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- begin wrap -->
+    <div class="container" id='option'>
+      <!-- begin in-page-nav -->
+      <div>
+        <!-- this id is the target of the stage links, and will be styled according to the target rule in the css until I comment it out. -->
+        <h1 id="top">Introduction to jQuery</h1>
+          <ul class="in-page-nav">
+            <li><a href="#one">Stage One: Hello jQuery!</a></li>
+            <li><a href="#two">Stage Two: Events</a></li>
+            <li><a href="#three">Stage Three: DOM Manipulation</a></li>
+            <li><a href="#four">Stage Four: DOM Traversal</a></li>
+          </ul>
+      </div>  <!-- end in-page nav -->
+
+      <div> <!-- begin stage one div -->
+        <h2 id="one">Stage One: Hello jQuery!</h2>
+        <!-- begin 2-column layout -->
+        <div class="row">
+          <!-- begin column-1 -->
+          <div class="flex-col-1 flex">
+            <h3>Why jQuery?</h3>
+            <p>jQuery is a library of JavaScript code that is 10+ years in the making that allows developers to
+               'write less, and do more'.</p>
+            <p>Using jQuery  cuts down on the amount of code needed to script HTML pages.</p>
+            <p>jQuery smooths over inconsistencies between the ways web
+               browsers deal with JavaScript</p>
+          </div>  <!-- end flex-col-1 div -->
+
+          <!-- begin column-2 -->
+          <div class="flex-col-2 flex">
+            <h3>Setting Up jQuery</h3>
+            <p>We could use the compressed version to save time loading over the uncompressed; the uncompressed
+               version is better suited during development because we can choose to view the code as we are coding.</p>
+            <p>We will use a Content Delivery Network (CDN) to host jQuery code and act as a resource reference
+               for our jQuery code.  Speed is an advantage of using a CDN.</p>
+            <p>The jQuery CDN can be found at the link provided from teamtreehouse.com.  Copy the code found
+               at the minified link and paste it just before the base scripts.js tag</p>
+          </div>  <!-- end flex-col-2 div -->
+        </div> <!-- end row 2-column-layout div -->
+
+        <!-- begin 3-column layout -->
+        <div class="row-3">
+          <!-- begin flex-column-1 -->
+          <div class="flex-column-1 flex-3">
+            <h3>The jQuery Object</h3>
+            <p>The return value of nearly every jquery function is a jQuery object.</p>
+            <p>The dollar sign [$] is a shorthand way of writing jQuery.  Sometimes there may be conflicts when using the [$]
+               shorthand because another library may use the [$] character.  The prototype.js for example uses [$] to represent
+               document.getElementById.  We can use the jQuery 'noConflict mode to avoid conflicts.  One way to invoke the
+               no conflict mode is to give $ a substitute alias reference:  var j$ = jQuery.noConflict();</p>
+            <p>jQuery allows us to chain methods together to achieve a desired result. Example:
+               $(this).text("Clicked!").delay(800).fadeOut(400);</p>
+          </div>  <!-- end flex-column-1 div -->
+
+          <!-- begin flex-column-2 div -->
+          <div class="flex-column-2 flex-3">
+            <h3>Selecting Page Elements with jQuery</h3>
+            <p>jQuery uses the same selectors that css uses in addition to several other generic selectors.  We pass the
+               element using a string inside the method: $('li'); $('a'); $('img'); $('p') etc....</p>
+            <p>We can also use descendant selectors: $('p a');</p>
+            <p>We can also use class and id selectors: $('.someClass'); $('#someID');</p>
+            <p>We can also use attribute selectors: $('[name='someName']');</p>
+            <p>We can also use multiple selectors seperated by a comma: $('li', 'a');</p>
+          </div>  <!-- end flex-column-2 div -->
+
+          <!-- begin flex-column-3 div -->
+          <div class="flex-column-3 flex-3">
+            <h3>Filtering Matched Elements</h3>
+            <p>We can use predefined methods to help filter matched elements, such as not, last, first. The elements that
+               match the selector we use are said to be matched. Example: $('li').someMethod(someEvent, someFunction() {...});
+               all the li elements 'match' the selector we used to target.  We can target them easier using the jQuery filter methods.</p>
+            <p>https://api.jquery.com/category/traversing/filtering/</p>
+          </div>  <!-- end flex-column-3 div -->
+        </div> <!-- end three-column row layout div -->
+
+        <!-- begin 2-column layout -->
+        <div class="row">
+          <!-- Begin flex-column-1 -->
+          <div class="flex-col-1 flex">
+            <h3>Accessing and Modifying Attributes</h3>
+            <p>We can use the .attr() method to get (access and return) an attributes value:
+               console.log($('a').attr('href'));  The value accessed and returned is the first 'a' link's href attribute
+               of: index.html because that is the first link on this html page.</p>
+            <p>The .removeAttr() method will set the attribute to its default value.</p>
+            <p>We can also set (modify) an 'a', 'href' with a button click using the following syntax:</p>
+            <img class="jquery-attr" src="img/jquery-attr.png" alt="jquery code snippet">
+          </div>  <!-- end flex-col-1 div -->
+
+          <!-- begin flex-column-2 div -->
+          <div class="flex-col-2 flex">
+            <p>The call to console.log returns the links current href address.  After our modification using the
+               button onclick function, we again use the console.log function to return the newly modified a href.</p>
+            <p>Below is syntax for opening all external domain links in a new tab, while not using a new tab for my domain.</p>
+            <img class="jquery-attr" src="img/jquery-attr2.png" alt="jquery code snippet">
+          </div>  <!-- end flex-column-2 div -->
+        </div> <!-- end row 2-column layout div -->
+      </div> <!-- end stage one div -->
+
+      <div> <!-- begin stage two div -->
+        <h2 id="two">Stage Two: Events</h2>
+        <h3>Intro to Events</h3>
+        <p>We can use browser events to cause various executed actions. Events can represent everything from basic
+           user interactions to automated notifications of things happening in the rendering model.  Here are two
+           website addresses for in-depth information regarding events.
+           https://developer.mozilla.org/en-US/docs/Web/Events
+           && http://api.jquery.com/category/events/</p>
+
+         <!-- Begin three-column layout using flexbox -->
+         <div class="row-3">
+           <!-- begin flex-column-1 div -->
+           <div class="flex-column-1 flex-3">
+             <h3>Callback Functions</h3>
+             <p>A callback function is a function that is passed as an argument to another function and is executed AFTER
+                its parent function has completed.</p>
+             <p>We can pass a callback function that has no arguments using this syntax:  $.get("myhtmlpage.html", myCallbackFunction);
+                Note that we don't need quotes or parentheses when calling the callback function.</p>
+             <p>We can pass a callback function WITH parameters by using an anonymous function as a wrapper.  Below is a code snippet example:</p>
+             <img class="jquery-callback" src="img/jquery-callback.png" alt="jquery callback code snippet">
+             <p>Control + Shift + I (linux ubuntu 16.04) will open the console in Google Chrome dev tools.</p>
+             <p>Below is a callback function example that uses HTML, CSS, and jQuery to depict a fading box.</p>
+             <img class="jquery-callback" src="img/jquery-callback2.png" alt="jquery callback code example.">
+             <div class="callbackDiv">
+               <button class="callback-button">Fade the Box</button>
+               <div class="box"></div>
+             </div> <!-- end callback div -->
+             <p>Two common callback functions are: 1) arr.forEach(callback, [thisArg]) this will run a callback function
+                for each element item in an array. 2a) window.setInterval(function, delayInMilliseconds[param1, param2...etc]);
+                2b) window.setInterval(code, delayInMilliseconds); This function will call the function repeatedly every
+                time period equal to the delay in milliseconds.</p>
+           </div>  <!-- end flex-column-1 div -->
+
+           <!-- begin flex-column 2 div -->
+           <div class="flex-column-2 flex-3">
+             <h3>Using the on() Method</h3>
+             <p>The syntax for the 'on' method is: 1) use the shorthand for jQuery followed by the element selector:
+                $('#someButtonID'). Next we use the .on method followed by parentheses and two arguments; the first argument is
+                the event, we want to 'listen' for, inside quotes, followed by the callback function we want to execute.
+                .on('click', function() {ourFunctionCode}).</p>
+             <p>The preceding on() method is clean and allows us to attach multiple event handlers without overwriting code;
+                uses a shorthand property that works for any event; and is easy to remember; and gives easy access to the event.
+                itself. If we give the callback function an event parameter: function(event), then we can obtain a wealth of
+                information in the console whenever the event is executed.</p>
+           </div>  <!-- end flex-column-2 div -->
+
+          <!-- begin flex-column 3 -->
+          <div class="flex-column-3 flex-3">
+            <h3 class="event-types">Event Types [Hover Over Me Please]</h3>
+          </div> <!-- end column-3 div -->
+        </div> <!-- end three column row layout div -->
+
+      </div> <!-- end stage two div -->
+
+      <div> <!-- begin stage three div -->
+        <h2 id="three">Stage Three: DOM Manipulation</h2>
+        <!-- Begin two-column layout using flexbox -->
+        <div class="row">
+          <!-- begin flex-column-1 div -->
+          <div class="flex-col-1 flex">
+            <h3>Getters vs. Setters</h3>
+            <p>Alot of what we do in javaScript involves manipulating the document object model (DOM).</p>
+            <p>Getters are used to retrieve information while setters are used to assign information to an element.</p>
+            <p>An example of a getter would be getting the value of some selected element, in this case, a paragraph element:
+               $('p').click(function { and assigning it to a variable: var htmlString = $(this).html();
+               'this' refers to the selected element.</p>
+            <p>An example of a setter would be assigning the var htmlString of the selected element to the .text method:
+               $(this).text(htmlString); Below is an example of the snippet:</p>
+            <img class="jquery-get-set" src="img/jquery-get-set.png" alt="jquery get and set code example.">
+            <p>This snippet would cause the paragraphs to change to the html code as they are clicked. Below I will illustrate this
+               snippet in action.</p>
+            <p class="get-set"><strong>The code after the p tags is shown upon a mouse-click.</strong> Click me!</p>
+            <p class="get-set"><b>Click me too</b><em>!!!</em></p>
+            <p class="get-set"><span>Hello </span>my name is Matthew</p>
+           </div>  <!-- end flex-col-1 div -->
+
+           <!-- begin flex-column 2 div -->
+           <div class="flex-col-2 flex">
+             <h3>Adding Content to the Page</h3>
+             <p>We can create entirely new elements to the DOM and clone existing elements.</p>
+             <p>Up until now we have been using the [$] (jQuery method) with CSS selectors to make jQuery objects, to do
+                operations on existing DOM nodes. Next we will learn how to pass in HTML code to the jQuery method to create entirely
+                new elements.  We will then create cloned elements from existing elements.</p>
+             <p>The apps.js file in my Downloads/jQuery WorkSpace Files/jQuery-basics Add Content to the Page/project/app.js and post.html
+                fully explain how to add html to a page using jQuery objects and methods.</p>
+           </div>  <!-- end flex-column -2 div -->
+         </div> <!-- end row 2-column layout div -->
+
+         <!-- Begin two-column layout using flexbox -->
+         <div class="row">
+           <!-- begin flex-column-1 div -->
+           <div class="flex-col-1 flex">
+             <h3>Showing and Hiding Content</h3>
+             <p>A huge part of what jQuery is used for is showing and hiding content based upon a user's interaction.
+                We can use animations to make the showing and hiding of content to be a smoother experience.</p>
+             <p>The show method displays a hidden matched element; the hide method hides a visible matched element; the toggle method
+                determines whether or not a matched element is hidden or visible and displays the opposite.</p>
+             <p>We can use the fadeIn and fadeOut methods to add nice smooth animations to the page.  Check the jQuery section
+                of scripts.js for an example of the fadeIn method applied to the image faded-in below. Notice how the jQuery uses
+                the .css method to set the display property to 'none' so that the image can fade in from not being displayed in the
+                first place.  There are a couple of ways to do this; the example I used is one of the ways.</p>
+             <img class="jquery-fadeIn" src="img/jquery-fadeIn.png" alt="jquery fadeIn code example.">
+             <p>Treehouse has an entire course on User Experience (UX). https://teamtreehouse.com/library/ux-basics  128 minute course.</p>
+             <p>Another website:  https://api.jquery.com/category/effects/basics/</p>
+           </div>  <!-- end flex-column-1 div -->
+
+           <!-- begin flex-column 2 div -->
+           <div class="flex-col-2 flex">
+             <h3>Changing Styles</h3>
+             <p>The css method in jQuery can be used as both a getter and a setter, just like the html() and text() methods.</p>
+             <p>Syntax: .css(propertyName) If we pass it one argument, a string, representing the property of the matched element,
+                it behaves as a getter method, and will return the string value of the string property we passed to it.</p>
+             <p>Syntax: .css(propertyName, value) If we pass it two arguments, the first being a string property and the second
+                being a string value or number, it behaves as a setter method and will set the property string we indicated as the value we set.</p>
+             <p>The file with the path jQuery Workspace Files/jQuery-basics Add Content to the Page/projectsjs/apps.js has code
+                that illustrates how to change element styles depending upon user interaction.</p>
+           </div>  <!-- end flex-column-2 div -->
+         </div> <!-- end row 2-column layout div -->
+
+          <h3>Removing Content from the Page</h3>
+          <p>Syntax: .remove([selector]) The .remove() method will complete remove an element from the page. We can accomplish the removal
+             of an element in at least two ways; practically, we can use the .empty() method to cause an element to vanish from the page,
+             though the inspection of the page using the dev tools will show that the element is still there, minus the contents. The
+             code for the empty() method is: $('#someElementIDSelector').empty();</p>
+          <p>We can use the .remove() method to completely remove the element from the html code.  It will not show up in the page, nor
+             will it show up in the dev tools upon inspection.</p>
+          <p>Side note: If the script doesn't work as expected, check to see if scripts have the same name, or id's have the same name.
+             I just found out the hard way that this was the case, after using a test environment that worked as expected. :)</p>
+          <div id="empty">
+            <p>Paragraph One: CLICK ME</p>
+          </div>
+          <div id="remove">
+          <p>Paragraph Two: OR CLICK ME</p>
+          </div>
+          <img class="jquery-removeAndEmpty" src="img/jquery-removeAndEmpty.png" alt="jquery fadeIn code example.">
+
+        </div> <!-- end stage three div -->
+
+        <div> <!-- begin stage four div -->
+          <h2 id="four">Stage Four: DOM Traversal</h2>
+          <!-- Begin three-column layout using flexbox -->
+          <div class="row-3">
+            <!-- begin flex-column-1 div -->
+            <div class="flex-column-1 flex-3">
+              <h3>Why we Traverse the DOM</h3>
+              <p>After the user makes a selection, we need to be able to move around the Document Object Model (DOM) at will.</p>
+              <h3>Understanding the DOM Tree</h3>
+              <p>Below is an example of a DOM Tree structure.</p>
+              <img class="dom-tree" src="img/dom-tree.png" alt="An example image of the DOM Tree">
+              <p>Visual representation of the DOM appears visually to be an upside down tree with branches, thus the DOM-Tree nomenclature was born.</p>
+              <p>Nodes that are 'contained' within other nodes are said to be descendants of the parent 'container' node item.  If the node is
+                 exactly one level down, it is called a child node of the parent node.</p>
+              <p>Nodes that share the same parent are said to be siblings</p>
+              <p>The node at the base (top) of the DOM Tree is the document node.  It is at the top because the DOM models an upside down tree.</p>
+            </div>  <!-- end flex-column-1 div -->
+
+            <!-- begin flex-column 2 div -->
+            <div class="flex-column-2 flex-3">
+              <h3>parent()</h3>
+              <p>We can use parent with a css selector and a more specific selector for more thorough filtering of matched elements like so:
+                 $("p").parent(".selected").css("background", "yellow");</p>
+            </div>  <!-- end flex-column-2 div -->
+
+            <!-- begin flex-column 3 div -->
+            <div class="flex-column-3 flex-3">
+              <h3>find(), prev(), and next()</h3>
+              <p>The .find() method allows us to conduct a narrowed search, through the matched element or elements.</p>
+              <p>The .previous() and .next() methods allow us to move from side to side in the DOM--they allow us to select siblings, and is useful
+                 for selecting form elements.</p>
+            </div>  <!-- end flex-column-3 div -->
+          </div> <!-- end row three column layout div -->
+
+          <!-- Begin two-column layout using flexbox -->
+          <div class="row">
+            <!-- begin flex-column-2 layout div -->
+            <div class="flex-col-1 flex">
+              <h3>siblings()</h3>
+              <p>We can use the .sibling() method to get a group of siblings to we can perform actions on those elements.  It doesn't return the
+                 selected element (the original element), only its siblings.</p>
+              <p>The .child() method returns the immediate children of a selected element.</p>
+              <p>The .closest() method allows us to get the closest ancestor up the DOM Tree.</p>
+              <p>The .map() method takes a collection of elements, runs them through a function, and creates a new jQuery object based on the results.</p>
+            </div>  <!-- end flex-col-1 div -->
+
+            <!-- begin flex-column-2 div -->
+            <div class="flex-col-2 flex">
+              <h3>Wrap Up!</h3>
+              <p>Using jQuery Plugins introduces jQuery plugins -- cool programs that work with jQuery that let you add interactive page effects,
+                 engaging user interfaces, and eye-catching additions to web pages.</p>
+            </div>  <!-- end flex-col-2 div -->
+          </div> <!-- end row 2-column-layout div -->
+        </div> <!-- end stage four div -->
+      </div> <!-- end wrap .container div  -->
+
+      <!-- bg-info is bootstrap reference for a blue color-->
+      <footer class="main-footer bg-info">
+        <span>&copy; 2017 Matthew Miles</span>
+        <a href='#top' class='to-top'>To top</a>
+      </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+
+  </body>
+
+</html>

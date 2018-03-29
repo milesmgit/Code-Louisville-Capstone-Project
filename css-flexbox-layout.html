@@ -1,0 +1,416 @@
+
+<!-- ================================================================================================================================================================================
+
+     ================================================================================================================================================================================ -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>CSS Flexbox Layout</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">  <!--I list this css file second in case I need to override the normalize.css file, as the last file listed takes precedence in the css stack -->
+
+  </head>
+
+  <body>
+    <!-- main nav consisting of dropdown menus and collapsing menu using bootstrap -->
+    <nav class="navbar navbar-expand-md navbar-light bg-info">
+      <a class="navbar-brand order-1" href="index.html">&lt;&nbsp;Web <span class="design_span">&nbsp;Design&nbsp;</span> &gt;</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              General Web Design
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="jquery-basics.html">jQuery Basics</a>
+              <div class="dropdown-divider"></div>
+              <a href="bootstrap-4-basics.html">Bootstrap 4 Basics</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              HTML
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="html.html">HTML Forms</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              CSS
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="css.html">CSS Basics</a>
+              <div class="dropdown-divider"></div>
+              <a href="responsive-layouts.html">CSS Responsive Layouts</a>
+              <div class="dropdown-divider"></div>
+              <a href="css-flexbox-layout.html">CSS Flexbox Layout</a>
+              <div class="dropdown-divider"></div>
+              <a href="css-selectors.html">CSS Selectors</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              JavaScript
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="javascript.html">JavaScript: Loops Arrays and Objects</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Background Color
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="#" onclick="lightblue()">Light Blue</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" onclick="lightgrey()">Light Grey</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" onclick="white()">White</a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <!-- begin wrap -->
+    <div class="container" id='option'>
+      <!-- begin in-page-nav -->
+      <div>
+        <h1 id="top">CSS Flexbox Layout</h1>
+        <ul class="in-page-nav">
+          <li><a href="#one">Stage One: Understanding Flexbox</a></li>
+          <li><a href="#two">Stage Two: Flexbox Properties</a></li>
+          <li><a href="#three">Stage Three: Building a Layout with Flexbox</a></li>
+        </ul>
+      </div> <!-- end in-page-nav div  -->
+
+        <div>  <!--Stage One Div -->
+          <h2 id="one">Stage One: Understanding Flexbox</h2>
+          <!-- Begin two-column layout using flexbox -->
+          <div class="row">
+            <!-- begin flex-column-1 div -->
+            <div class="flex-col-1 flex">
+              <h3>Introducing Flexbox</h3>
+              <p>Flexbox offers the benefits of using block, inline-block and inline, without the quirks of using them. You can also change the direction, size and order regardless of the original order in HTML.</p>
+              <p>It's easier than ever to distribute space evenly to several elements on a page, or give more or less space to elements all within css flexbox rules, without the need to touch the html code.</p>
+            </div>  <!-- end flex-col-1 div -->
+
+            <!-- begin flex-column 2 div -->
+            <div class="flex-col-2 flex">
+              <h3>Flexbox Basics and Terminology</h3>
+              <p>The two more important elements in flexbox terminology are flexbox containers and flexbox items.  The first step in using flexbox is creating a flex container; this will hold the flex items and sets the context for building the layout using the child item elements.  A flex item can be any inline, block or inline-block item, and every direct child of a flexbox container is said to be a flexbox item.  There can be any number of items inside a flexbox container.</p>
+              <p>For example:  a ul would be the flex container and the li items are flex items, as they are children of the container parent in that relative context.</p>
+              <p>Axis: Start and end directions by default are:</p>
+            </div>  <!-- end flex-col-2 div -->
+          </div> <!-- end row 2-column-layout div -->
+
+          <!-- begin container2 div -->
+          <div class="container2">
+            <div class="item-1 item">
+              <img src="img/flexbox-axis.png" class="flexbox-image" alt="flexbox axis image example">
+            </div>
+          </div> <!-- end container2 div -->
+
+          <h3>Creating a Flex Container</h3>
+          <p>Before we can use any flexbox property, we need to create a flexbox container.  This is done by assigning the flex value to the display property to the flexbox parent container (display: flex;)</p>
+        </div> <!-- End Stage One Div-->
+
+        <div>  <!--Stage Two Div -->
+          <h2 id="two">Stage Two: Flexbox Properties</h2>
+        <!-- Begin two-column layout using flexbox -->
+        <div class="row">
+          <!-- begin flex-column-1 div -->
+          <div class="flex-col-1 flex">
+            <h3>Controlling the Direction of Flex Items</h3>
+            <p>Flex containers may take advantage of flexbox's direction, order, alignment, and sizing properties.  It is important to know that some properties apply to flex containers only while others apply only to the flex items.</p>
+            <p>The flex-direction property applys only to the flex container; it will do nothing if applied to the items.</p>
+            <p>The row-reverse property for the flex-direction reverses the order of the items in the flex container.</p>
+            <p>By default, the browser tries to fit all items on one flexline.  It will overflow content item, unless we code to wrap the remaining items, or increase height and or width dimensions.</p>
+          </div>  <!-- end flex-col-1 div -->
+
+          <!-- begin flex-column 2 div -->
+          <div class="flex-col-2 flex">
+            <h3>Wrapping Flex Items</h3>
+            <p>flex-wrap: wrap;  when there isn't enough room on one line, the flex container will wrap the remaining items onto a new line in the direction of the flex axis.  If we change the direction using flex-direction, that will be reflected in our browser.</p>
+            <p>flex-wrap: wrap; flex-direction: column; height: 280px; will cause the remaining items to wrap creating a new area of columns.
+          </div>  <!-- end flex-col-2 div -->
+        </div> <!-- end row 2-column layout div -->
+
+        <!-- Begin two-column layout using flexbox -->
+        <div class="row">
+          <!-- begin flex-column-1 div -->
+          <div class="flex-col-1 flex">
+            <h3>Distributing Space Inside a Flex Container</h3>
+            <p>  justify-content:  Let's you control the position and alignment along the main-axis, and how space should be distributed in the flex-container.  Justify-content will distribute the space that's available after the padding and margins have been accounted for.</p>
+            <p>Options like center, left, right, space-around, and space-between, let you control the position and alignment along the main-axis, and how space should be distributed in the flex-container.  Justify-content will distribute the space that's available after the padding and margins have been accounted for. Space-around will give equal space to the left and right side of each element, and space between doesn't account for the edge space of the end elements, at least not in horizontal layout.</p>
+            <p>Also, when applying a margin: auto; to the first and second item, each item pulls itself in toward itself, taking up only the amount of space it needs and left-justifying itself.</p>
+          </div>  <!-- end flex-col-1 div -->
+
+          <!-- begin flex-column 2 div -->
+          <div class="flex-col-2 flex">
+            <h3>Changing the Order of Flex Items</h3>
+            <p>The order property applies to flex-items only, it will have no affect on parent containers.</p>
+            <p>Styling for .item-6 {order: -1; } will place item-6 just to the left of item-1; the default counting for the left-most item starts at 0, 0 being for item-1 in the html, translating to the flex-direction main and or cross access; if we used -2, then item-6 would still be just to the left of item-1 whose value is 0 by default.  We can change these values for any item.  This idea helps when styling for accessibility first, and then we can change the order as needed.</p>
+          </div>  <!-- end flex-col-2 div -->
+        </div> <!-- end row 2-column layout div -->
+
+        <!-- Begin three-column layout using flexbox -->
+        <div class="row-3">
+          <!-- begin flex-column-1 div -->
+          <div class="flex-column-1 flex-3">
+            <h3>Growing Flex Items</h3>
+            <p>.item {flex-grow: 0;} is default.  Setting .item {flex-grow: 1;} causes the items to take up the full width of their parent container.</p>
+            <p>If we set .item-2 {flex-grow: 2;} then for each one width given to the other items, item two will gain 2, so it's a 2:1 ratio of width for item-2.</p>                <p>flex: 2; this will grow item-2 at 2:1 ratio over the other items set to flex-grow: 1;, this is shorthand for flex-grow.</p>
+            <p>It's good practice to use flex shorthand, and then target specific items using the other properties and values.</p>
+          </div>  <!-- end flex-column-1 div -->
+
+          <!-- begin flex-column 2 -->
+          <div class="flex-column-2 flex-3">
+            <h3>Smarter Layouts with Flex-Basis and Flex Grow</h3>
+            <p>flex-basis gives even more control to items needing to have equal space.  So we set the initial size we want the flex items to be, then flexbox equally distributes the space among the flex items. Until the items shrink below the flex-basis thresh-hold; after that the browser intelligently redistributes the space accounting for content differences.</p>
+          </div>  <!-- end flex-column-2 div -->
+
+          <!-- begin flex-column 3 -->
+          <div class="flex-column-3 flex-3">
+            <h3>Aligning Flex Items on the Cross Axis</h3>
+            <p>Using align-items: stretch; will fill the space vertically inside the container according to the preset or default height of the container.   Using align-items: flex-start; will cause the items to fill the container vertically up to their content only.  align-items: flex-end; packs the items to the bottom of the cross axis, but only as high as their content.</p>
+            <p>Using align-items: center; will perfectly center all of the items along the cross axis, and we can choose to override any of these using the specific item property align-self.  align-self can take the value flex-start, flex-end, stretch, or center</p>
+          </div>  <!-- end flex-column-3 div -->
+        </div> <!-- end three column row layout div -->
+
+        <h3>Vertical and Horizontal Centering</h3>
+        <div class="container2">
+          <div class="item-2 item">
+            <img src="img/vertical-horizontal-centering.png" class="flexbox-image" alt="flexbox centering image example">
+          </div> <!-- end item-2 div -->
+        </div> <!-- end container2 div -->
+      </div> <!-- End Stage Two Div-->
+
+      <div>  <!--Stage Three Div -->
+        <h2 id="three"><a href="#top">Stage Three: Building a Layout with Flexbox</a></h2>
+        <!-- Begin two-column layout using flexbox -->
+        <div class="row">
+          <!-- begin flex-column-1 div -->
+          <div class="flex-col-1 flex">
+            <h3>Building a Navagation Bar with Flexbox</h3>
+            <p>Check notes under Flexbox Web Design, and see example below with background: yellow;.</p>
+          </div>  <!-- end flex-col-1 div -->
+
+          <!-- begin-flex-column 2 div -->
+          <div class="flex-col-2 flex">
+            <h3>Creating a Two Column Layout with Flexbox</h3>
+            <p>Check notes under media-queries at 700px and 1025px.  Basically, I included both columns
+               in a parent div, set that parent div's display property to flex, and then using
+               shorthand, I set the flex-grow property to 1 for both items at 700px up to
+               and including 1024px.  At 1025px I set column 2, the secondary content, to flex-grow: 2
+               using the shorthand.
+            </p>
+          </div>  <!-- end flex-col-2 div -->
+        </div> <!-- end row 2-column-layout div -->
+
+        <!-- Begin three-column layout using flexbox -->
+        <div class="row-3">
+          <!-- begin flex-column-1 div -->
+          <div class="flex-column-1 flex-3">
+            <h3>Creating a Three Column Layout with Flexbox</h3>
+            <p>I have outlined this thoroughly in the notes in the styles.css file. I started by creating a parent div named "
+               .row-3 and including 3 child divs with the class .flex-3 as a unifying class in addition to seperate class names for each
+               .flex-column-1, 2 and 3 to specifically target any one of the child items.  I included three columns of filler content. I also added an image to the first
+               child, so that it was in turn the child of a child element. I gave the image a width of 40% of the parent column .flex-column-1.</p>
+            <p>Next I added an h3 heading to the first column, and then preceded to set its parent, flex-column-1 to a display: flex; in order to get the columns centered using align-items: center;
+               Next I set a media query condition for 700px; my goal was to create a 2-column layout up to 1024px, and wrapping
+               the third column to the bottom of the next line.</p>
+            <p>First I set the display: flex; property and value for the parent element in order to have a default row of three columns; next I set the flex-grow to 1 so that there would be equal width
+               given to the three columns, but I also added a 50% value to the flex-grow shorthand; thus it was flex: 1 50%;
+               Next I added a flex-wrap: wrap; to the parent .row-3 element so that the third column would breakdown to
+               next line after the 2 previous columns took up 50% of the width apiece.  Without adding the wrap value, all
+               three columns would occupy the same row at once, creating a cramped feeling.</p>
+            <p>Next I targeted viewports of 1025px and greater. My goals were to have a three-column layout on one line, increase
+               the size of the first column in ratio to the other two columns, and move the first column to the middle for page balance.</p>
+            <p>I set the flex-grow property of the flex-column-1 child item to 1.4 that of the other child item columns. I used the shorthand
+               property. Next, to prevent the third column from wrapping in any case, I set the flex-basis: 0; so that wrapping would not
+               take place until any item reached 0px, an impossible feat.  Next I changed the order of the second column with the class .flex-column-2
+               to -1 so that it would shift to the left of the first column, whose order value was set at the default of 0.  Now my first column
+               appeared 1.4 times the size of the other two columns and it was positioned in the middle as desired.</p>
+          </div>  <!-- end flex-column-1 div -->
+
+          <!-- begin flex-column 2 div -->
+          <div class="flex-column-2 flex-3">
+            <h3>Aligning Items to the Bottom of a Column</h3>
+            <p>First I created three buttons, one for each column. I placed one each inside the .flex-3 divs. Next I gave the .flex-3 parent container to the buttons, the display: flex;
+             Next, I gave the flex-direction: the value of column.  Next I styled the .flex-button class with a margin-top: auto; to pin the buttons to the bottom of the flex container.
+             Finally, to move the buttons to the left, I used the align-self: flex-start.</p>
+          </div>  <!-- end flex-column-2 div -->
+
+          <!-- begin flex-column 3 div -->
+          <div class="flex-column-3 flex-3">
+            <h3>Creating a Sticky Footer with Flexbox</h3>
+            <p>First, I set the body element's display property to flex, and flex-direction to column. Next, set min-height to 100vh.  Lastly, target a wrapper, for me, it was .wrap and set the flex to 1.</p>
+          </div>  <!-- end flex-column-3 div -->
+        </div> <!-- end three column row layout div -->
+      </div> <!-- End Stage Three Div-->
+    </div>   <!-- closing container div -->
+  </div> <!-- end wrap div -->
+
+<!-- ***************************************************************************************************************
+******************************************      Begin Flexbox Examples      ****************************************
+********************************************************************************************************************
+-->
+
+  <header class="main-header2">
+    <h5 class="name2">Web Design</h5>
+    <ul class="main-nav2">
+      <li>Web Design</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul> <!-- end main-nav2 div -->
+  </header> <!--end main header2 div-->
+
+  <div class="banner2">
+    <img class="arrow" src="img/arrow.svg" alt="arrow image">
+    <h1 class="headline2 items">Flexible Web Design</h1>
+    <span class="tagline2 items">Web design that uses flexbox implements.</span>
+  </div> <!--end banner2 div-->
+
+  <div class="container3">
+    <h1 class="flex-two">Two Column Layout</h1>
+    <!-- Begin two-column layout using flexbox -->
+    <div class="row">
+      <!-- begin flex-column-1 div -->
+      <div class="flex-col-1 flex">
+        <h3>Creating a Two Column Layout with Flexbox</h3>
+        <p>Check notes under media-queries at 700px and 1025px.  Basically, I included both columns
+           in a parent div, set that parent div's display property to flex, and then using
+           shorthand, I set the flex-grow property to 1 for both items at 700px up to
+           and including 1024px.  At 1025px I set column 2, the secondary content, to flex-grow: 2
+           using the shorthand.
+      </div>  <!-- end flex-col-1 div -->
+
+      <!-- begin flex-column 2 -->
+      <div class="flex-col-2 flex">
+        <h3>Creating a Two Column Layout with Flexbox</h3>
+        <p>Check notes under media-queries at 700px and 1025px.  Basically, I included both columns
+           in a parent div, set that parent div's display property to flex, and then using
+           shorthand, I set the flex-grow property to 1 for both items at 700px up to
+           and including 1024px.  At 1025px I set column 2, the secondary content, to flex-grow: 2
+           using the shorthand.
+      </div>  <!-- end flex-col-2 div -->
+    </div> <!-- end row layout div -->
+  </div> <!-- end container3 div -->
+
+  <div class="container3">
+    <h1 class="flex-three">Three Column Layout</h1>
+    <!-- Begin three-column layout using flexbox -->
+    <div class="row-3">
+      <!-- begin flex-column-1 div -->
+      <div class="flex-column-1 flex-3">
+        <h3>Creating a Three Column Layout with Flexbox</h3>
+        <p>I have outlined this thoroughly in the notes in the styles.css file. I started by creating a parent div named "
+           .row-3 and including 3 child divs with the class .flex-3 as a unifying class in addition to seperate class names for each
+           .flex-column-1, 2 and 3 to specifically target any one of the child items.  I included three columns of filler content. I also added an image. I gave the image a width of 40% of the parent column .flex-column-1.</p>
+        <p>Next I added an h3 heading to the first column, and then preceded to set its parent, flex-column-1 to a display: flex; in order to get the columns centered using align-items: center;
+           Next I set a media query condition for 700px; my goal was to create a 2-column layout up to 1024px, and wrapping
+           the third column to the bottom of the next line.</p>
+        <p>First I set the display: flex; property and value for the parent element in order to have a default row of three columns; next I set the flex-grow to 1 so that there would be equal width
+           given to the three columns, but I also added a 50% value to the flex-grow shorthand; thus it was flex: 1 50%;
+           Next I added a flex-wrap: wrap; to the parent .row-3 element so that the third column would breakdown to
+           next line after the 2 previous columns took up 50% of the width apiece.  Without adding the wrap value, all
+           three columns would occupy the same row at once, creating a cramped feeling.</p>
+        <p>Next I targeted viewports of 1025px and greater. My goals were to have a three-column layout on one line, increase
+           the size of the first column in ratio to the other two columns, and move the first column to the middle for page balance.</p>
+        <p>I set the flex-grow property of the flex-column-1 child item to 1.4 that of the other child item columns. I used the shorthand
+           property. Next, to prevent the third column from wrapping in any case, I set the flex-basis: 0; so that wrapping would not
+           take place until any item reached 0px, an impossible feat.  Next I changed the order of the second column with the class .flex-column-2
+           to -1 so that it would shift to the left of the first column, whose order value was set at the default of 0.  Now my first column
+           appeared 1.4 times the size of the other two columns and it was positioned in the middle as desired.</p>
+        <img class="arrow-flex" src="img/arrow.svg">
+        <button class="flex-button" href="#">Learn More</button>
+      </div>  <!-- end flex-column-1 div -->
+
+      <!-- begin flex-column-2 div-->
+      <div class="flex-column-2 flex-3">
+        <h3>Creating a Three Column Layout with Flexbox</h3>
+        <p>I have outlined this thoroughly in the notes in the styles.css file. I started by creating a parent div named "
+           .row-3 and including 3 child divs with the class .flex-3 as a unifying class in addition to seperate class names for each
+           .flex-column-1, 2 and 3 to specifically target any one of the child items.  I included three columns of filler content. I also added an image. I gave the image a width of 40% of the parent column .flex-column-1.</p>
+        <p>Next I added an h3 heading to the first column, and then preceded to set its parent, flex-column-1 to a display: flex; in order to get the columns centered using align-items: center;
+           Next I set a media query condition for 700px; my goal was to create a 2-column layout up to 1024px, and wrapping
+           the third column to the bottom of the next line.</p>
+        <p>First I set the display: flex; property and value for the parent element in order to have a default row of three columns; next I set the flex-grow to 1 so that there would be equal width
+           given to the three columns, but I also added a 50% value to the flex-grow shorthand; thus it was flex: 1 50%;
+           Next I added a flex-wrap: wrap; to the parent .row-3 element so that the third column would breakdown to
+           next line after the 2 previous columns took up 50% of the width apiece.  Without adding the wrap value, all
+           three columns would occupy the same row at once, creating a cramped feeling.</p>
+        <p>Next I targeted viewports of 1025px and greater. My goals were to have a three-column layout on one line, increase
+           the size of the first column in ratio to the other two columns, and move the first column to the middle for page balance.</p>
+        <p>I set the flex-grow property of the flex-column-1 child item to 1.4 that of the other child item columns. I used the shorthand
+           property. Next, to prevent the third column from wrapping in any case, I set the flex-basis: 0; so that wrapping would not
+           take place until any item reached 0px, an impossible feat.  Next I changed the order of the second column with the class .flex-column-2
+           to -1 so that it would shift to the left of the first column, whose order value was set at the default of 0.  Now my first column
+           appeared 1.4 times the size of the other two columns and it was positioned in the middle as desired.</p>
+        <button class="flex-button" href="#">Learn More</button>
+      </div>  <!-- end flex-column-2 div -->
+
+      <!-- begin flex-column 3 -->
+      <div class="flex-column-3 flex-3">
+        <h3>Creating a Three Column Layout with Flexbox</h3>
+        <p>I have outlined this thoroughly in the notes in the styles.css file. I started by creating a parent div named "
+           .row-3 and including 3 child divs with the class .flex-3 as a unifying class in addition to seperate class names for each
+           .flex-column-1, 2 and 3 to specifically target any one of the child items.  I included three columns of filler content. I also added an image. I gave the image a width of 40% of the parent column .flex-column-1.</p>
+        <p>Next I added an h3 heading to the first column, and then preceded to set its parent, flex-column-1 to a display: flex; in order to get the columns centered using align-items: center;
+           Next I set a media query condition for 700px; my goal was to create a 2-column layout up to 1024px, and wrapping
+           the third column to the bottom of the next line.</p>
+        <p>First I set the display: flex; property and value for the parent element in order to have a default row of three columns; next I set the flex-grow to 1 so that there would be equal width
+           given to the three columns, but I also added a 50% value to the flex-grow shorthand; thus it was flex: 1 50%;
+           Next I added a flex-wrap: wrap; to the parent .row-3 element so that the third column would breakdown to
+           next line after the 2 previous columns took up 50% of the width apiece.  Without adding the wrap value, all
+           three columns would occupy the same row at once, creating a cramped feeling.</p>
+        <p>Next I targeted viewports of 1025px and greater. My goals were to have a three-column layout on one line, increase
+           the size of the first column in ratio to the other two columns, and move the first column to the middle for page balance.</p>
+        <p>I set the flex-grow property of the flex-column-1 child item to 1.4 that of the other child item columns. I used the shorthand
+           property. Next, to prevent the third column from wrapping in any case, I set the flex-basis: 0; so that wrapping would not
+           take place until any item reached 0px, an impossible feat.  Next I changed the order of the second column with the class .flex-column-2
+           to -1 so that it would shift to the left of the first column, whose order value was set at the default of 0.  Now my first column
+           appeared 1.4 times the size of the other two columns and it was positioned in the middle as desired.</p>
+        <button class="flex-button" href="#">Learn More</button>
+      </div>  <!-- end flex-column-3 div -->
+    </div> <!-- end three column row layout div -->
+  </div> <!-- end .container3 div -->
+
+   <!-- bg-info is bootstrap reference for a blue color-->
+   <footer class="main-footer bg-info">
+     <span>&copy; 2017 Matthew Miles</span>
+     <a href='#top' class='to-top'>To top</a>
+   </footer>
+
+
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+   <script src="js/scripts.js"></script>
+
+ </body>
+
+</html>

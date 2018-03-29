@@ -1,0 +1,303 @@
+
+
+<!-- ================================================================================================================================================================================
+
+     ================================================================================================================================================================================ -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width", initial-scale="1.0", shrink-to-fit="no">
+    <title>Web Design</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">  <!--I list this css file second in case I need to override the normalize.css file, as the last file listed takes precedence in the css stack -->
+  </head>
+
+  <body>
+
+    <!-- main nav consisting of dropdown menus and collapsing menu using bootstrap -->
+    <nav class="navbar navbar-expand-md navbar-light bg-info">
+      <a class="navbar-brand order-1" href="index.html">&lt;&nbsp;Web <span class="design_span">&nbsp;Design&nbsp;</span> &gt;</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              General Web Design
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="jquery-basics.html">jQuery Basics</a>
+              <div class="dropdown-divider"></div>
+              <a href="bootstrap-4-basics.html">Bootstrap 4 Basics</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              HTML
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="html.html">HTML Forms</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              CSS
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="css.html">CSS Basics</a>
+              <div class="dropdown-divider"></div>
+              <a href="responsive-layouts.html">CSS Responsive Layouts</a>
+              <div class="dropdown-divider"></div>
+              <a href="css-flexbox-layout.html">CSS Flexbox Layout</a>
+              <div class="dropdown-divider"></div>
+              <a href="css-selectors.html">CSS Selectors</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              JavaScript
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="javascript.html">JavaScript: Loops Arrays and Objects</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Background Color
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="#" onclick="lightblue()">Light Blue</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" onclick="lightgrey()">Light Grey</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" onclick="white()">White</a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <!-- begin wrap -->
+    <div class="container" id='option'>
+      <!-- begin in-page-nav -->
+      <div>
+        <h1 id="top">HTML Forms</h1>
+        <ul class="in-page-nav">
+          <li><a href="#one">Stage One: HTML Forms</a></li>
+          <li><a href="#two">Stage Two: Organizing Forms</a></li>
+          <li><a href="#three">Stage Three: Choosing Options</a></li>
+        </ul>
+      </div> <!-- end in-page-nav div  -->
+
+      <!-- begin stage one div -->
+      <h2 id="one">Stage One: The Form Element</h2>
+      <!-- Begin two-column layout using flexbox -->
+      <div class="row">
+        <!-- begin flex-column-1 -->
+        <div class="flex-col-1 flex">
+            <h3>The Form Element</h3>
+            <p>The form element is like a div element, but for form controls.</p>
+            <p>Forms may not be nested inside other forms.</p>
+            <p>Forms can be processed by server side languages like ruby, php and python.</p>
+            <p>Part of processing the data involves two important form attributes; form action="the url of the program that will process information submitted via the form,
+               and method="post or get" is the http method that the browser uses to submit the form; post corresponds to the HTTP POST method; "post" means that the html information is posted to the server,
+               while "get" corresponds to the HTTP GET Method; in this case data is sent inside of the url, and parameters are seperated with a question mark. It's important to coordinate the client and server-side code
+               so that the browsers can talk to one another.</p>
+        </div>  <!-- end flex-col-1 div -->
+
+        <!-- begin flex-column 2 -->
+        <div class="flex-col-2 flex">
+          <h3>The Input Element</h3>
+          <p>The input element is the most commonly used form element. It is a self-closing tag, like image; no need to close it.</p>
+          <p>The input type attribute denotes what format the data will be in; several types are email, telephone, text, and so on; id refers to how we will identify the input element for css and javascript targeting; the name attribute is the variable that holds the user input data.</p>
+        </div>  <!-- end flex-col-2 div -->
+      </div> <!-- end row 2-column layout div -->
+
+      <!-- Begin two-column layout using flexbox -->
+      <div class="row">
+        <!-- begin flex-column-1 -->
+        <div class="flex-col-1 flex">
+          <h3>The Textarea Element</h3>
+          <p>Sometimes a single line for text-input isn't enough; contact forms, and or user bios might require a textarea box.</p>
+        </div>  <!-- end flex-col-1 div -->
+
+        <!-- begin flex-column 2 -->
+        <div class="flex-col-2 flex">
+          <h3>The Button Element</h3>
+          <p>A form is not complete without a submit button. There are also two other types of buttons; the reset button will clear all form data when clicked, and the
+             button type "button" has no default behavior and is mostly intended for use in combination with javascript.</p>
+        </div>  <!-- end flex-col-2 div -->
+      </div> <!-- end row 2-column layout div -->
+
+      <h3>Form Example</h3>
+      <div class="form-background"> <!-- beginning css styling for form -->
+        <!-- example of a form element and some of its controls. -->
+        <form class="form">
+          <h2 class="sign-up">Sign Up</h2>
+
+          <fieldset class="fieldset">
+            <legend><span class ="number">1</span>Your Basic Info</legend>
+            <!-- label for the id="name" field of the form controls;  on-click, the label applies focus to the form control with the id of "name" if the label has a for="id" attribute. -->
+            <!-- example input elements and attributes -->
+            <label for="name">Name:</label>
+            <input class="input" type="text" id="name" name="user_name">
+
+            <label for="email">Email:</label>
+            <input class="input" type="email" id="email" name="user_email" placeholder="email@website.com" disabled>
+
+            <label for="password">Password:</label>
+            <input class="input" type="password" id="password" name="user_password">
+          </fieldset>
+
+          <fieldset class="fieldset">
+            <legend><span class ="number">2</span>Your Profile</legend>
+            <!--example of a textarea element and attributes-->
+            <label for="bio">User Bio:</label>
+            <textarea class="input" type="text" id="bio" name="user_bio"></textarea>
+          </fieldset>
+
+          <fieldset class="fieldset2">
+            <legend><span class ="number">3</span>Your Age</legend>
+            <!--example of a textarea element and attributes-->
+            <!-- label for the radio button -->
+            <label>Age:</label>  <!-- there is no 'for' attribute because there is nothing to specifically associate the label with; we have 'for' attributes for the following labels because they each refer to a seperate radio button, and the 'for' attribute is used to give focus to a specific input element. -->
+            <!-- Radio button example -->
+            <input type="radio" id="under_13" value="under_13" name="user_age"><label for="under_13" class="radio-text">Under 13</label><br>
+            <input type="radio" id="over_13" value="over_13" name="user_age"><label for="over_13" class="radio-text">13 or Older</label>
+          </fieldset>
+
+          <fieldset class="fieldset">
+            <legend><span class =number>4</span>Your Job Role</legend>
+            <label for="job">Job role:</label>
+            <select class="select-menu" id="job" name="user_job">  <!--Begin Select Menu -->
+              <optgroup label="Web"> <!-- the optgroup element with the attribute "label" provides headings to the option elements in the dropdown menu list -->
+                <option value="frontend_developer">Front-End Developer</option>
+                <option value="php_developer">PHP Developer</option>
+                <option value="python_developer">Python Developer</option>
+                <option value="rails_developer">Rails Developer</option>
+                <option value="web_designer">Web Designer</option>
+                <option value="wordpress_developer">Wordpress Developer</option>
+              </optgroup>
+              <optgroup label="Mobile">
+                <option value="android_developer">Android Developer</option>
+                <option value="ios_developer">IOS Developer</option>
+                <option value="mobile_developer">Mobile Developer</option>
+              </optgroup>
+              <optgroup label="Business">
+                <option value="buisness_owner">Business Owner</option>
+                <option value="freelancer">Freelancer</option>
+              </optgroup>
+            </select>
+          </fieldset>
+
+          <fieldset class="fieldset">
+            <legend><span class =number>5</span>Interests</legend>
+            <label>Interests:</label>
+            <input type="checkbox" id="development" value="interests_development" name="user_interests"><label class="checkbox" for="development">Development</label><br>
+            <input type="checkbox" id="design" value="interests_design" name="user_interests"><label class="checkbox" for="design">Design</label><br>
+            <input type="checkbox" id="business" value="interests_business" name="user_interests"><label class="checkbox" for="business">Business</label><br>
+          </fieldset>
+
+          <!--example of a submit button element-->
+          <button  id="submit-button" type="submit">Sign Up</button>
+        </form>
+     </div> <!-- end css stying div for form background -->
+
+     <!-- begin stage two div -->
+     <div>
+       <h2 id="two">Stage Two: Organizing Forms</h2>
+       <!-- Begin two-column layout using flexbox -->
+       <div class="row">
+         <!-- begin flex-column-1 div -->
+         <div class="flex-col-1 flex">
+           <h3>The Label Element</h3>
+           <p>We can use a label element to let the user know what the following elements are meant to represent.  For example: <br>&lt;label for="name"&gt;Name:&lt;&sol;label&gt;. When the label is clicked, this gives focus to the element meant to have it.</p>
+         </div>  <!-- end flex-col-1 div -->
+
+         <!-- begin flex-column 2 -->
+         <div class="flex-col-2 flex">
+            <h3>Fieldsets and Legends</h3>
+            <p>We can wrap form controls together using the fieldset element.  Then we can set the child items to flex, and use css to style the group of items.</p>
+            <p>We can use a legend element just below the fieldset and just above the controls to give a group title to the form controls information context. I'll also use a span element to target just a portion of the content on the line, for styling.
+               Example:<br>&lt;legend&gt;&lt;span class="number">1&lt;&sol;span&gt;Your Basic Info&lt;&sol;legend&gt;</p>
+         </div>  <!-- end flex-col-2 div -->
+       </div> <!-- end row layout div -->
+     </div> <!-- end stage two div -->
+
+     <!-- begin stage three div -->
+     <div>
+       <h2 id="three">Stage Three: Choosing Options</h2>
+       <!-- Begin two-column layout using flexbox -->
+       <div class="row">
+         <!-- begin flex-column-1 div -->
+         <div class="flex-col-1 flex">
+           <h3>Select Menus</h3>
+           <p>Anytime you have a list of more than 5 things from which you would like a user to choose,
+              it is best to go with a select menu, because it saves space.</p>
+           <p>The elements we put inside the select element are called option elements. Check notes
+              in this html file for an example of a select menu and option elements.</p>
+           <p>The optgroup element and its accompanying "label" attribute provides heading for the options in the dropdown menu list.</p>
+         </div>  <!-- end flex-col-1 div -->
+
+         <!-- begin flex-column 2 -->
+         <div class="flex-col-2 flex">
+            <h3>Radio Buttons</h3>
+            <p>When there are fewer than 6 options from which the user may choose, it is best to go with radio buttons. The html file for this page shows an example for input radio buttons.</p>
+            <p>Since the two radio elements share the same name="user_name" attribute value, the button will toggle back and forth, allowing us to chose one or the other at any one time; if the two elements had a different name attribute value, then we could select both choices at the same time, so we need to make sure to get that correct.</p>
+         </div>  <!-- end flex-col-2 div -->
+       </div> <!-- end row 2-column layout div -->
+
+       <!-- Begin two-column layout using flexbox -->
+       <div class="row">
+         <!-- begin flex-column-1 div -->
+         <div class="flex-col-1 flex">
+           <h3>Checkboxes</h3>
+           <p>Checkboxes are useful for when you have multiple options to present to the user, and you want to give them the option of choosing more than one of them at once. Check the html notes for this page to see an example of checkboxes.</p>
+         </div>  <!-- end flex-col-1 div -->
+
+         <!-- begin flex-column 2 -->
+         <div class="flex-col-2 flex">
+            <h3>Going Further</h3>
+            <p>It is more important to know how to find information than to memorize everything.</p>
+            <p>Try to use ruby, php, or python to make this form submit ot a database; I would like to try that actually.</p>
+         </div>  <!-- end flex-col-2 div -->
+       </div> <!-- end row layout div -->
+     </div> <!-- end stage three div -->
+   </div> <!-- end wrap container div -->
+
+  <!-- bg-info is bootstrap reference for a blue color-->
+  <footer class="main-footer bg-info">
+    <span>&copy; 2017 Matthew Miles</span>
+    <a href='#top' class='to-top'>To top</a>
+  </footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="js/scripts.js"></script>
+<!-- if offline, use the script tags below
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+</script>
+<script src="js/jQuery Development Uncompressed/jquery-3.2.1.js"></script>  -->
+
+</body>
+
+</html>

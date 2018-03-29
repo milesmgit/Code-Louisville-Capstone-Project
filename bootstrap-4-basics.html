@@ -1,0 +1,279 @@
+<!-- ================================================================================================================================================================================
+
+================================================================================================================================================================================ -->
+
+
+
+     <!DOCTYPE html>
+     <html>
+
+       <head>
+         <meta name="viewport" content="width=device-width", initial-scale="1.0", shrink-to-fit="no">
+         <title>Web Design</title>
+         <meta charset="utf-8">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+         <link rel="stylesheet" href="css/styles.css">  <!--I list this css file second in case I need to override the normalize.css file, as the last file listed takes precedence in the css stack -->
+       </head>
+
+       <body>
+
+         <!-- main nav consisting of dropdown menus and collapsing menu using bootstrap -->
+         <nav class="navbar navbar-expand-md navbar-light bg-info">
+           <a class="navbar-brand order-1" href="index.html">&lt;&nbsp;Web <span class="design_span">&nbsp;Design&nbsp;</span> &gt;</a>
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+           </button>
+
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                 <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+               </li>
+
+               <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   General Web Design
+                 </a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   <a href="jquery-basics.html">jQuery Basics</a>
+                   <div class="dropdown-divider"></div>
+                   <a href="bootstrap-4-basics.html">Bootstrap 4 Basics</a>
+                 </div>
+               </li>
+
+               <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   HTML
+                 </a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   <a href="html.html">HTML Forms</a>
+                 </div>
+               </li>
+
+               <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   CSS
+                 </a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   <a href="css.html">CSS Basics</a>
+                   <div class="dropdown-divider"></div>
+                   <a href="responsive-layouts.html">CSS Responsive Layouts</a>
+                   <div class="dropdown-divider"></div>
+                   <a href="css-flexbox-layout.html">CSS Flexbox Layout</a>
+                   <div class="dropdown-divider"></div>
+                   <a href="css-selectors.html">CSS Selectors</a>
+                 </div>
+               </li>
+
+               <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   JavaScript
+                 </a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   <a href="javascript.html">JavaScript: Loops Arrays and Objects</a>
+                 </div>
+               </li>
+
+               <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Background Color
+                 </a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   <a href="#" onclick="lightblue()">Light Blue</a>
+                   <div class="dropdown-divider"></div>
+                   <a href="#" onclick="lightgrey()">Light Grey</a>
+                   <div class="dropdown-divider"></div>
+                   <a href="#" onclick="white()">White</a>
+                 </div>
+               </li>
+
+             </ul>
+           </div>
+         </nav>
+
+         <!-- begin wrap -->
+         <div class="container" id='option'>
+           <!-- begin in-page-nav -->
+           <div>
+             <!-- this id is the target of the stage links, and will be styled according to the target rule in the css until I comment it out. -->
+             <h1 id="top">Bootstrap 4 Basics</h1>
+             <ul class="in-page-nav">
+               <li><a href="#one">Stage One: Getting to Know Bootstrap 4</a></li>
+               <li><a href="#two">Stage Two: Responsive Layouts with the Bootstrap Grid</li>
+               <li><a href="#three">Stage Three: Using Bootstrap Components</a></li>
+             </ul>
+           </div> <!-- end in-page-nav -->
+
+           <div> <!-- begin stage one div -->
+             <h2 id="one">Stage One: Getting to Know Bootstrap 4</h2>
+             <!-- Begin three-column layout using flexbox -->
+             <div class="row-3">
+               <!-- begin flex-column-1 div -->
+               <div class="flex-column-1 flex-3">
+                 <h3>Rapid Development with Bootstrap</h3>
+                 <p>When using bootstrap there is no need for the normalize.css file, as bootstrap has its own version called reboot.</p>
+                 <p>Bootstrap is a free open source front-end framework that helps build a functional design and layout in little time.</p>
+                 <p>Instead of starting from scratch, Bootstrap has ready-made components that make it possible to build a layout rapidly.</p>
+                 <p>Other advantages are reusable HTML and CSS for common elements like buttons, grids, forms, navigation menus and more.</p>
+                 <p>Custom JavaScript plugins make it possible to add interactivity to elements without having to write a single line of JavaScript code.</p>
+                 <p>One of the best advantages is cross-browser compatibility.  Bootstrap already tested it's design features across all of the major web browsers and devices.  It just works.</p>
+               </div><!-- end flex-column-1 div -->
+
+               <!-- begin flex-column 2 div -->
+               <div class="flex-column-2 flex-3">
+                 <h3>Introducing Bootstrap 4</h3>
+                 <p>Bootstrap was created by the developers at twitter back in 2011, and is the most popular html, css, and JavaScript frameowrk in the world for building responsive,
+                    mobile-first projects on the web. Over 7 million apps and site across the web are built using Bootstrap. Bootstrap is a reusable front-end framework; a
+                    framework is a resuable platform that helps you build high-level projects without worrying about the lower-level, repetitive details.  A front end framework solves
+                    common layout, typography, and browser compatibility problems from the start.</p>
+               </div>  <!-- end flex-column-2 div -->
+
+               <!-- begin flex-column 3 div -->
+               <div class="flex-column-3 flex-3">
+                 <h3>Getting Started</h3>
+                 <p>I need to ask for help installing Bootstrap using the NPM and source files etc....that stuff is all Greek to me; at least I can translate Greek.</p>
+                 <p>For now I am using the content devliery network (CDN) bootstrap website files.</p>
+               </div>  <!-- end flex-column-3 div -->
+             </div> <!-- end three column row layout div -->
+
+             <!-- Begin two-column layout using flexbox -->
+             <div class="row">
+               <!-- begin flex-column-1 div -->
+               <div class="flex-col-1 flex">
+                 <h3>Creating a Simple Page</h3>
+                 <p>Global Files and Settings like normalize and reboot are used for cross-browser consistency and elegance.</p>
+                 <p>I am following along with the lessons in a new site located in the workspace files I downloaded. The file path is:
+                    Downloads/jQuery Workspace Files/Getting Started with Bootstrap.</p>
+                 <p>Clicking on the Typography link in the bootstrap documentation brings up a list of classes to the right of the page like 'Display headings'</p>
+                 <p>I will wrap the heading and lead elements in a layout container using bootstrap. class="container", or I could use class="container-fluid" which will span the entire
+                    width of the viewport.</p>
+               </div>  <!-- end flex-col-1 div -->
+
+               <!-- begin flex-column 2 div -->
+               <div class="flex-col-2 flex">
+                 <h3>Enhancing the Page</h3>
+                 <p>The utilities class has sub-classes for colors.</p>
+               </div>  <!-- end flex-col-2 div -->
+             </div> <!-- end row layout div -->
+           </div> <!-- end stage one div -->
+
+           <div> <!-- begin stage two div -->
+             <h2 id="two">Stage Two: Responsive Layouts with the Bootstrap Grid</h2>
+             <!-- Begin three-column layout using flexbox -->
+             <div class="row-3">
+               <!-- begin flex-column-1 div -->
+               <div class="flex-column-1 flex-3">
+                 <h3>Layout in Bootstrap</h3>
+                 <p>The code for the examples described can be found in the downloaded bootstrap workspaces project. Until noted
+                    otherwise, the examples can be found in the 'How the Bootstrap Grid works/index.html'.</p>
+                 <p>The default is set to the extra small, mobile first approach, or viewports of less than 576px.</p>
+                 <p>From there we have small from 576px and up; medium, from 768px and up; large, 992px and up; extra large, at 1200px and up.</p>
+               </div>  <!-- end flex-column-1 div -->
+
+               <!-- begin flex-column 2 -->
+               <div class="flex-column-2 flex-3">
+                 <h3>How the Bootstrap Grid Works</h3>
+                 <p>The above example creates three equal-width columns on small, medium, large, and extra large devices using our predefined
+                    grid classes. Those columns are centered in the page with the parent .container.</p>
+                 <p>Containers provide a means to center and horizontally pad your site’s contents.
+                    Use .container for a responsive pixel width or .container-fluid for width: 100% across all viewport and device sizes.</p>
+                 <p>Rows are wrappers for columns. Each column has horizontal padding (called a gutter) for controlling the space between them.
+                    This padding is then counteracted on the rows with negative margins. This way, all the content in your columns is
+                    visually aligned down the left side.</p>
+                 <p>In a grid layout, content must be placed within columns and only columns may be immediate children of rows.</p>
+                 <p>Thanks to flexbox, grid columns without a specified width will automatically layout as equal width columns. For example,
+                    four instances of .col-sm will each automatically be 25% wide from the small breakpoint and up. See the auto-layout
+                    columns section for more examples.</p>
+                 <p>Column classes indicate the number of columns you’d like to use out of the possible 12 per row. So, if you want three
+                    equal-width columns across, you can use .col-4, and each column would span 3 column widths of the 12 possible widths per row.</p>
+                 <p>Column widths are set in percentages, so they’re always fluid and sized relative to their parent element.</p>
+                 <p>Columns have horizontal padding to create the gutters between individual columns, however, you can remove
+                    the margin from rows and padding from columns with .no-gutters on the .row.</p>
+                 <p>To make the grid responsive, there are five grid breakpoints, one for each responsive breakpoint: all breakpoints
+                    (extra small), small, medium, large, and extra large.</p>
+                 <p>Grid breakpoints are based on minimum width media queries, meaning they apply to that one breakpoint and all those above
+                    it (e.g., .col-sm-4 applies to small, medium, large, and extra large devices, but not the first xs breakpoint).</p>
+                 <p>You can use predefined grid classes (like .col-4) or Sass mixins for more semantic markup.  .col-4 means that the col we
+                    set will take up 4 units of columns on a scale of 12; so the column col-4 will take up 1/3 of the row width. </p>
+                 <p>We can set the .container class to "container-fluid" so that the columns span the full 100% width of the parent container.
+                    When the container is set to fluid, there is no max-width, and this can be unappealing on very large viewports.</p>
+                 <p>We can also set the container to be a fixed-width container that centers the content and resizes itself depending on the
+                    breakpoints of the viewports that are used to view the html page.</p>
+               </div>  <!-- end flex-column-2 div -->
+
+               <!-- begin flex-column 3 div -->
+               <div class="flex-column-3 flex-3">
+                 <h3>Styling Content</h3>
+                 <p>We can use the utilities link on the left-hand side of the page to get to the spacing classes when we need to set
+                    margins. I'm using the shorthand for margin-bottom:  mb-4 to reflect 1.5 rem.  If our default body font-size is 16px,
+                    then 1.5rem = 24px of bottom margin.  I applied the bottom margin to the h1 elements.  I used top padding also to create
+                    some breathing room for the first div container.</p>
+                 <p>Next I will add an image to the first column.  I want the image to be no more wide than the column.  This type of responsive
+                    behavior is handy when our native dimensions of the image exceed the column widths. Content >> Images, then read up for
+                    the  class="img-fluid"</p>
+                 <p>Next up, we will apply a border radius to the image using the border-radius class="rounded" found at
+                    Utilities/Borders/#Border-radius.</p>
+                 <p>Speakers & Schedule received the same styling: changed the heading size to display-4; centered the text; gave a top and
+                    bottom margin of 3rem using my-5; gave some contrast to the page headings using the class="text-muted" found at
+                    Content >> typography >> [right-side] Customizing headings.</p>
+               </div>  <!-- end flex-column-3 div -->
+             </div> <!-- end three column row layout div -->
+
+             <!-- Begin two-column layout using flexbox -->
+             <div class="row">
+               <!-- begin flex-column-1 div -->
+               <div class="flex-col-1 flex">
+                 <h3>Column Sizing</h3>
+                 <p>[Layout/Grid/#Grid options] Ok, so by setting each of the column to col-lg, they will each display as single column units until the large breakpoint is reached and higher,
+                    upon such time as they will each take up equal width in the viewport. We could use any of the col classes: .col, col-sm, col-md, col-lg, col-xl.
+                    We also have the option to divy up the available space in 12 parts. So col-xl-6 will give that column 6 column units at the xtra large breakpoint of 1200px and greater</p>
+               </div>  <!-- end flex-col-1 div -->
+
+               <!-- begin flex-column 2 div -->
+               <div class="flex-col-2 flex">
+                 <h3>Reordering and Offsetting Columns</h3>
+                 <p>We can use order classes to redistribute columns accross the page depending on our responsive viewport design.  </p>
+                 <p>[Layout/Grid/#Reordering/Order classes]  So if I wanted the first column in the html flow structure to render as the second at the medium breakpoint of 768px and greater,
+                    I could use the following syntax: [order-md-2] Now I also need to set the order of the others or it won't render properly.</p>
+                 <p>Bootstrap is awesomely powerful.</p>
+                 <p>[Layout/Grid/#Reordering/Offsetting columns] margin-left -auto will push the column in the opposite direction: ml-auto; this is good for keeping the items flush with the margins.</p>
+               </div>  <!-- end flex-col-2 div -->
+             </div> <!-- end row 2-column layout div -->
+           </div> <!-- end stage two div -->
+
+           <div> <!-- begin stage three div -->
+             <h2 id="three">Stage Three: Using Bootstrap Components</h2>
+             <h3>Building a Navbar</h3>
+             <p>[left side of the documentation] Components/Navs or Components/Navbar</p>
+             <p>We can use effects like nav pills, nav tabs etc....Just take a look at the inpage examples and experiment.</p>
+             <p>Using the class [fixed-top] on the nav class will keep the menu navbar at the top of the page.</p>
+             <p>We put the navbar outside of a container because we want it to extend the width of the page; but we put
+                the remainder of the navbar contents (links etc...) inside a container div so that they are inline with the
+                content below.</p>
+             <p>Using the mobile first approach we start with a dropdown hamburder-menu; then we use [navbar-expand-lg] to
+                show the links from left to right.  We can also use the flex property and set the order of the a class navbar-brand
+                [order-1] so that it is positioned to the far right of the page.</p>
+             <p>For the nav class color scheme we add [navbar-dark bg-info] to get a nice blue color.</p>
+           </div> <!-- end stage four div -->
+         </div> <!-- end wrap .container div  -->
+
+         <!-- bg-info is bootstrap reference for a blue color-->
+         <footer class="main-footer bg-info">
+           <span>&copy; 2017 Matthew Miles</span>
+           <a href='#top' class='to-top'>To top</a>
+         </footer>
+
+       <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+     <script src="js/scripts.js"></script>
+     <!-- if offline, use the script tags below
+     <script src="http://code.jquery.com/jquery-3.2.1.min.js"
+             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+             crossorigin="anonymous">
+     </script>
+     <script src="js/jQuery Development Uncompressed/jquery-3.2.1.js"></script>  -->
+
+     </body>
+
+     </html>

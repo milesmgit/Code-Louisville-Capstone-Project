@@ -1,0 +1,299 @@
+
+<!-- ================================================================================================================================================================================
+
+     ================================================================================================================================================================================ -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>CSS Basics</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">  <!--I list this css file second in case I need to override the normalize.css file, as the last file listed takes precedence in the css stack -->
+
+
+  </head>
+
+  <body>
+
+    <!-- main nav consisting of dropdown menus and collapsing menu using bootstrap -->
+    <nav class="navbar navbar-expand-md navbar-light bg-info">
+      <a class="navbar-brand order-1" href="index.html">&lt;&nbsp;Web <span class="design_span">&nbsp;Design&nbsp;</span> &gt;</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              General Web Design
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="jquery-basics.html">jQuery Basics</a>
+              <div class="dropdown-divider"></div>
+              <a href="bootstrap-4-basics.html">Bootstrap 4 Basics</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              HTML
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="html.html">HTML Forms</a>
+
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              CSS
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="css.html">CSS Basics</a>
+              <div class="dropdown-divider"></div>
+              <a href="responsive-layouts.html">CSS Responsive Layouts</a>
+              <div class="dropdown-divider"></div>
+              <a href="css-flexbox-layout.html">CSS Flexbox Layout</a>
+              <div class="dropdown-divider"></div>
+              <a href="css-selectors.html">CSS Selectors</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              JavaScript
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="javascript.html">JavaScript: Loops Arrays and Objects</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Background Color
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="#" onclick="lightblue()">Light Blue</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" onclick="lightgrey()">Light Grey</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" onclick="white()">White</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- begin wrap -->
+    <div class="container" id='option'>
+      <!-- begin in-page-nav -->
+      <div>
+        <h1 id="top">CSS Layout Basics</h1>
+        <ul class="in-page-nav">
+          <li><a href="#one">Stage One: Getting Started with CSS Layout</a></li>
+          <li><a href="#two">Stage Two: Controlling Layout with CSS Display Modes</a></li>
+          <li><a href="#three">Stage Three: Page Layout with the Float Property</a></li>
+          <li><a href="#four">Stage Four: Positioning Page Content</a></li>
+        </ul>
+      </div> <!-- end in-page-nav -->
+
+      <div>  <!--Stage 1 Div -->
+        <h2 id="one">Stage One: Getting Started with CSS Layout</h2>
+        <!-- Begin three-column layout using flexbox -->
+        <div class="row-3">
+          <!-- begin flex-column-1 div -->
+          <div class="flex-column-1 flex-3">
+            <h3>Wrappers a.k.a. Containers</h3>
+            <p>In web design, a wrapper (also known as a container) like div and section, is commonly used to center the layout on the page and keeps it from looking to wide or too narrow, depending on the device or viewport width.</p>
+            <p>Setting the div class="wrapper" { margin: 0 auto; } will center the child elements on the page.</p>
+            <p>Setting the div class="wrapper" width to 70% using a media query for screen larger than 768px width will keep the page from looking to spread out -- the narrower width will give the page some heft.</p>
+            <p>I set the h1 margin to 0 using the .name class because the body margin of 0 was collapsing into the h1 margin of .6em, because there wasn't any border, padding, or content between the parent body element and the h1 element, causing the h1 margin to dominate the area since it is the greater of the two values between body and h1.</p>
+            <p>Another way to ensure that the h1 margin doesn't collapse into the parent body element is to add some top padding to the .main-header class.</p>
+            <p>If two elements touch each other and each one has a margin set, the element with the smaller margin will collapse and the total margin between the two elements will be that of the larger margin value.  Example.  Block elements:  upper element has a bottom margin of 30px, and the lower element has an upper margin of 20px.  The 20px margin will collapse to 0, and there will be a total of 30px of margin between the two elements.</p>
+          </div>  <!-- end flex-column-1 div -->
+
+          <!-- begin flex-column 2 div -->
+          <div class="flex-column-2 flex-3">
+            <h3>Mobile First Approach</h3>
+            <p>It is better to design an app or website for a mobile device first and then use media queries to compensate for larger viewports.</p>
+            <p>https://zurb.com/word/mobile-first</p>
+            <p>http://bradfrost.com/blog/web/mobile-first-responsive-web-design/</p>
+            <p>http://blog.teamtreehouse.com/box-sizing-secret-simple-css-layouts</p>
+            <p>http://blog.teamtreehouse.com/take-control-of-the-box-model-with-box-sizing</p>
+          </div>  <!-- end flex-column-2 div -->
+
+          <!-- begin flex-column-3 div -->
+            <div class="flex-column-3 flex-3">
+              <h3>Creating a Sticky Footer</h3>
+              <p>One way to ensure the footer stays at the bottom of a webpage is to add a min-height to a wrapper which encloses all elements except for the footer element.  vh = viewport height.  1vh = 1% of the height of the viewport, so 100vh is 100% of the height of the viewport. We can use the developer tools to determine our footer's height (89px in this case, and if our footer height changes, we need to recalculate and adjust), and then we can use the calc function to do the math of:  min-height: calc(100vh - 89px);  This will place our footer precisely where it needs to be.</p>
+            </div>  <!-- end flex-column-3 div -->
+          </div> <!-- end three column row layout div -->
+        </div> <!-- End Stage One Div-->
+
+        <div>  <!--Stage 2 Div -->
+          <h2 id="two">Stage Two: Controlling Layout with CSS Display Modes</h2>
+          <!-- Begin three-column layout using flexbox -->
+          <div class="row-3">
+            <!-- begin flex-column-1 div -->
+            <div class="flex-column-1 flex-3">
+              <h3>Positioning Elements Side-By-Side with Inline Display</h3>
+              <p>UL (Unordered Lists) li (list items), divs, paragraphs and headings are block elements by default, and as such, have line breaks before and after them.</p>
+              <p>Images, links and span tags are inline and do not contain line breaks.</p>
+              <p>When we use inline display elements, the browser does not apply any width and height properties, or top and bottom margin settings; it will only accept left and right margin settings and padding settings.</p>
+            </div>  <!-- end flex-column-1 div -->
+
+            <!-- begin flex-column-2 div -->
+            <div class="flex-column-2 flex-3">
+              <h3>Using Inline-Block to Set Width, Height, Top and Bottom Margin, and Padding</h3>
+              <p>The advantage to using inline-block over inline is that you can add top and bottom margin and width and height to the element.</p>
+              <p>By default block elements take up the width of their container whether or not they need the space for content; inline-block will be as wide as the content before additional css.</p>
+              <p>Setting a UL (unordered list) or ol (ordered list) to inline-block will cause all of the list items to behave as one block by default.  They will stay together during resizing.</p>
+            </div>  <!-- end flex-column-2 div -->
+
+            <!-- begin flex-column 3 div -->
+            <div class="flex-column-3 flex-3">
+              <h3>Removing Gaps Between Inline and Inline-Block Elements</h3>
+              <p>Inline and inline-block elements have spaces between them just like the words of a paragraph; to remove them, you can add negative right-margin. You can also group  list-items back to back without spaces &lt;li&gt;content&lt;/li&gt;&lt;li&gt;content, or not add a closing li tag.</p>
+              <p>An elements font-size will affect the gaps between inline and inline-block elements; the larger the font-size, the greater the gap.</p>
+            </div>  <!-- end flex-column-3 div -->
+          </div> <!-- end three column row layout div -->
+
+          <!-- begin basic 2-column layout -->
+          <div class="column_1">
+            <h3>Column 1 Layout</h3>
+            <p>Creating columns can be a little tricky but offer an interesting option to page layout.  First I will place the content inside two div elements with the classes "column_1 and column_2. Next, I will change the display value to inline-block.</p>
+            <p>Next, I will set the width to 50%.</p>
+          </div> <!-- end column_1 div -->
+
+          <div class="column_2">
+            <h3>Column 2 Layout</h3>
+            <p>Since inline and inline-block elements have a space between them when layed out side by side, their placement will break the column layout unless a negative right margin of 4px or so is applied.</p>
+            <p>Aligning the two columns vertically is simple using the vertical-align property and setting the value to top.</p>
+            <p>Next I will add some space in between the columns using what web design refers to as gutters. Padding-left and padding-right will do the job nicely. 1em value to start; adjust to taste.</p>
+          </div>  <!-- end basic 2-column div -->
+        </div>  <!--End Stage Two Div -->
+
+        <div>  <!--Stage 3 Div -->
+          <h2 id="three">Stage Three: Page Layout with the Float Property</h2>
+          <h3>How Floats Work</h3>
+          <p>Floats take the element out of the normal flow of the page:  You can have text wrap around an image by floating the image to the right or left.</p>
+          <p>Float accepts three values: left, right, or none.</p>
+          <p>Using margin on the paragraph element will not have any effect on the img because we have taken the img out of the normal flow of the page.  Apply the margins to the img instead.</p>
+          <p>For some reason, upon setting the img at the bottom of the page and then floating it to the left and right, the img was smushed into my footer img. I fixed the problem by adding more text to the page below where I set the img in html.</p>
+          <h3>Creating a Horizontal Navigation with Floats</h3>
+          <header class="float-header-collapsed">
+            <h1 class="float-h1-collapsed">Floating</h1>
+            <ul class="float-nav-collapsed">
+              <li><a>Photos</a></li>
+              <li><a>Screenshots</a></li>
+              <li><a>Daily Journal</a></li>
+            </ul>
+          </header>  <!-- end float header -->
+          <p>If a block level element contains floated elements, its height collapses.</p>
+          <p>.float-header did in fact collapse, for it has 0 height in the chrome developer tools.  See how the above paragraph element touches the top.  That's because the header lost all it's height, so essentially, the paragraphs are in its place so to speak.</p>
+          <header class="float-header-fixed clear-fix">
+            <h1 class="float-h1-fixed">Floating</h1>
+            <ul class="float-nav-fixed">
+              <li><a>Photos</a></li>
+              <li><a>Screenshots</a></li>
+              <li><a>Daily Journal</a></li>
+            </ul>
+          </header>  <!-- end float header -->
+          <p>This paragraph is fixed (using clear-fix in the CSS) so that it respects the .float-header-fixed element.</p>
+          <p>If the parent element (like header for example) has some padding, it will respect the padding, so that it doesn't fully collapse to zero height.</p>
+          <p>A quick and dirty solution in a pinch is to set a fixed height in the collapsed element; though this isn't the best solution in complicated layouts with columns and such.</p>
+          <p>Another way is to set the parents overflow value to hidden or auto; though using hidden will chop off any drop down menus that cross the parent elements dimensions.</p>
+          <p>The most popular method is to clear the element using a pseudo-class called a clear-fix.</p>
+          <p><strong>.clear-fix::after { content: ""; display: table; clear: both;}</strong> The double colon indicates a pseudo-class. We are going to create a virtual element called content: "" and give it the empty string; and we use display: table to create a block element so it's kind of like a place holder. We use clear: both in order to clear any collapsed space on either side of the floated elements.</p>
+
+          <div class="column_3">
+            <h3>Inline-Block Column Challenge</h3>
+            <p>Creating columns can be a little tricky but offer an interesting option to page layout.  First I will place the content inside two div elements with the classes "column_3 and column_4. Next, I will change the display value to inline-block.</p>
+            <p>Next, I will set the width to 40% and 60% respectively using a media query for screens 769px and larger.  I will then float an img to the right side of the right column</p>
+            <p>I'll add transform: scale(1.8) and rotate(180deg); for a little sizzle to the img.</p>
+          </div> <!-- end column_3 div -->
+
+          <div class="column_4">
+            <h3>Inline-Block Column Challenge</h3>
+            <p>Since inline and inline-block elements have a space between them when layed out side by side, their placement will break the column layout unless a negative right margin of 4px or so is applied.</p>
+            <p>Aligning the two columns vertically is simple using the vertical-align property and setting the value to top.</p>
+            <p>Next I will add some space in between the columns using what web design refers to as gutters. Padding-left and padding-right will do the job nicely. 1em value to start; adjust to taste.</p>
+          </div>  <!-- end column_4 div -->
+
+          <div class="clear-fix"> <!-- Column Floating Clear Fix Div -->
+            <div class="column-5 float-challenge">
+              <h3>Column Float Challenge</h3>
+              <p>Creating columns can be a little tricky but offer an interesting option to page layout.  First I will place the content inside two div elements with the classes "column-5 and column-6. Next, I will change the display value to inline-block.</p>
+              <p>Next, I will set the width to 40% and 60% respectively using a media query for screens 769px and larger.  I will then float an img to the right side of the right column</p>
+              <p>I'll add transform: scale(1.8) and rotate(180deg); for a little sizzle to the img.</p>
+            </div> <!-- end column-5 div -->
+
+            <div class="column-6 float-challenge">
+              <h3>Column Float Challenge</h3>
+              <p>Since inline and inline-block elements have a space between them when layed out side by side, their placement will break the column layout unless a negative right margin of 4px or so is applied.</p>
+              <p>Aligning the two columns vertically is simple using the vertical-align property and setting the value to top.</p>
+              <p>Next I will add some space in between the columns using what web design refers to as gutters. Padding-left and padding-right will do the job nicely. 1em value to start; adjust to taste.</p>
+              <p>Float vs Inline-Block:  Use inline-block to lay out navigation items side-by-side or create a simple two-column layout.</p>
+              <p>Use inline-block when you need control over center and vertical alignment.</p>
+              <p>Use floats to flow content like text along the left or right side of an element.</p>
+              <p>One advantage of using float over inline-block is that you do not have to deal with the default horizontal whitespace between elements.  Remember, applying a negative right margin fixes that.</p>
+            </div>  <!-- end column-6 div -->
+          </div> <!-- end column floating clear-fix div -->
+        </div>  <!--End Stage Three div -->
+
+        <div>  <!-- Stage Four div -->
+          <h2 id="four">Stage Four: Positioning Page Content</h2>
+          <h3>How Absolute Positioning Works</h3>
+          <p>position: absolute; will take the element out of the normal flow and place it in the top left corner of its parent container.  They are neither affected by or affect other elements on the page.</p>
+          <p>position: absolute; top: 0; left: 0;  top: and left: are called position offsets. Percentage, em, and pixels are data types that may be used for the offsets.  The position of the elements will be relative to their parent container. They will be placed in relation to the first parent that has a relative position; if none has a relative position, then the browser window will be the relative parent.</p>
+          <h3>Positioning Elements Relative to Other Elements</h3>
+          <p>Suppose we have a header element and then we place list items inside the header div container.  Then we set the list items to absolute position.  They will be placed relative to the browser viewport since we didn't give the header container a relative position value.  If we then give the header element a position value of relative (position: relative;), which is the closest parent of the list items, the list items will move around inside the header element depending on the data
+             type values we pass to them.</p>
+          <h3>Create an Image Caption with Absolute Positioning</h3>
+          <p>Position the caption over the image: First, position the figcaption element absolute; next, set the parent figure element as the relative positioning context.</p>
+          <!-- featured image -->
+          <figure>
+            <img class="feat-img" src="img/arrow.svg" alt="Scalable SVG Graphic">
+            <figcaption>
+              <h4>"Arrows look cool" &rarrw;</h4>
+                "I am excited to use gimp; it will help me to add more flavor to my page."
+            </figcaption>
+          </figure>
+            <h3>Fixed Positioning</h3>
+            <p>Fixed positioning is a form of absolute positioning that places the element in relation to the browser window instead of a parent element.</p>
+            <p>Unlike absolute positioning, fixed positioning will stay fixed to one spot on the browser window; that is the user never loses sight of the nav menu, because it stays fixed to an area on the viewport.</p>
+            <p>Because the position: fixed of my main-header cuts off the remainder of my body by the amount in the chrome developer tools for my header height, which happens to be 194px, I add a padding-top to the body element for that amount.  This restores my page proportions.</p>
+            <p>Next I ran into a problem of the figure and figure caption rolling over the top of my main-header:  To fix this:  We move on to master the z-index property.</p>
+            <h3>How Z-Index Works</h3>
+            <p>When relative, absolute and or fixed elements are used, they may end up occupying the same space, so we will override this behavior using the z axis, or 3d space stacking order so to speak (to the front, or back).</p>
+            <p>Fixed, relative and or absolute styled position elements that appear later in the code will roll over those that come before it, and by later, I mean lower on the html page.</p>
+            <p>We can adjust the stacking order using the z-index's z-axis.  An element with a higher z-index will apear over those with lower z-index: example 20 z-index will roll over a 10 z-index.</p>
+            <p>Positioned elements have a default z-index of 0, so we will need to make a few changes.  The code is:   z-index: 1000 to be safe in case I add more position elements later;</p>
+            <p>Position elements with a z-index are in a stacking order relative to their parent element.</p>
+        </div> <!--End stage four div -->
+      </div> <!-- end wrap .container div  -->
+
+      <!-- bg-info is bootstrap reference for a blue color-->
+      <footer class="main-footer bg-info">
+        <span>&copy; 2017 Matthew Miles</span>
+        <a href='#top' class='to-top'>To top</a>
+      </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+
+  </body>
+</html>

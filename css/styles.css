@@ -1,0 +1,1242 @@
+
+/*  Cascading Priorities    ****************************************************************************
+
+  Importance:  Depends on origin of the stylesheet:
+                 User Agent Stylesheet is applied by default.
+                 User Styles:  Larger/smaller fonts, etc...
+                 Author Styles: styles.css is given highest priority
+
+  Specificity:  inline styles have highest specificty; then id, then class, then element.
+                the last value listed in the same selector rule will have highest specificity.
+
+  Source Order:  Last stylesheet takes precedence over the others.
+                 All things being equal, the last written rule will take precedence over the others.
+
+*******************************************************************************************************
+Inheritence:  Except for the text-color in links, the child's element will be the same as the parent
+unless specificly accounted for in the CSS child's element's rule.
+We can use color: initial; to get the browser to ignore a parent element's rule for color and
+instead use the default color for the parent.
+
+*******************************************************************************************************
+Helpful Tips:  codepen.io/picks/2/  codepen/io/picks/3/
+control + shift + p   opens a shortcut guide in atom.
+*******************************************************************************************************/
+
+
+
+
+/* *****************************************************************************
+********************************************************************************
+*********************************   Web Fonts  *********************************
+********************************************************************************
+***************************************************************************** */
+
+@font-face {
+  font-family: 'Abolition Regular';
+  src: url('../fonts/abolition-regular-webfont.eot');
+  src: url('../fonts/abolition-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/abolition-regular-webfont.woff') format('woff'),
+       url('../fonts/abolition-regular-webfont.ttf') format('truetype');
+}
+
+/* *****************************************************************************
+********************************************************************************
+******************************  Base Layout Styles  ***************************
+********************************************************************************
+***************************************************************************** */
+
+/* forces the padding and border into the total width and height of the elements. The * is the universal selector, and applies to all elements on the page. */
+* {
+   box-sizing: border-box;
+}
+
+body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin-bottom: 170px;
+    }
+
+.wrap {
+  flex: 1;
+  height: calc(100vh - 158px); /* 100 % of viewport height minus the 100px footer height and 58px header height */
+  background: lime url('../img/haiku.jpg') no-repeat center;
+  background-size: cover;
+
+}
+
+/* Main Nav */
+
+.dropdown-menu {
+  text-align: center;
+  background: black;
+  font-size: .8em;
+}
+
+.dropdown-menu li {
+  font-size: .8em;
+}
+
+.dropdown-menu a {
+  color: lightblue;
+}
+
+.dropdown-menu a:hover {
+  color: lime;
+}
+
+a:hover {
+color: black; /* also we can add [a] to [rgb] to get [rgba] or alpha channel to control opacity.  */
+}
+
+.dropdown-menu:hover {
+  cursor: pointer;
+}
+
+/* Setting the margin-top and padding-top for the title headline h1  */
+#top {
+  margin-top: 0;
+  padding: 25px 0;
+}
+
+.design_span {
+  color: white;
+  background: black;
+}
+
+
+.container {
+  width: 95%;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+
+/*  -----  This aligns the in-page-nav for the various stages covered in the course -------- */
+.in-page-nav {
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 50px;
+  list-style-type: none;
+  padding-left: 5px;
+  font-size: .83em;
+}
+
+
+/*  ------   Main Footer ---------- */
+.main-footer {  /* footer elements expand to 100% page width by default. */
+  /*  position: fixed; bottom: 0; will create a persistent footer...I'll use to include a to top link for user experience.  */
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  height: 100px;
+  padding-top: 20px;
+  width: 100%;
+  margin: 0;
+  border-top: 2px solid black;
+}
+
+
+/* to-top link in the persistent sticky footer  */
+.to-top {
+  float: right;
+  padding: 0 10px;
+  margin-right: 20px;
+  font-size: 1.5em;
+  background: white;
+  border: 2px black solid;
+}
+
+
+
+/*******************************************************************************
+****************************** Base Element Styles *****************************
+*******************************************************************************/
+
+h1 {
+  font-size: 1.25em;
+  color: firebrick;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px auto;
+}
+
+
+h2 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.2em;
+  padding: 20px auto;
+  text-shadow: 1px 8px 8px rgba(8, 8, 8, .7);  /* 6px of blur  text-shadow: 0 1px 1px rgba(0,0,0,.8); */
+  margin: 20px auto;
+  color: firebrick;
+}
+
+h3 {
+  font-size: .9em;
+  color: darkblue;
+  padding: 20px 0;
+  margin: 20px auto;
+}
+
+h6 {
+  margin: 0 auto;
+}
+
+p {
+  width: 90%;
+  text-align: left;
+  font-size: .85em;
+  color: black;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 20px;
+  margin: 0 auto;
+}
+
+
+/*  Changing the default bullets for lists to no list-style */
+li {
+  list-style-type: none;
+}
+
+a {
+  color: firebrick;
+  font-size: .8em;
+  list-style-type: none;
+}
+
+figcaption {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: rgba(200, 150, 75, .2);
+  line-height: 1;
+  padding: 1em;
+}
+
+figure {
+  position: relative;
+  margin-bottom: 20px;
+  background: lightgrey;
+}
+
+/*  --------  Specific Multi-use Page Elements --------  */
+/*  .arrow is a child element of container, therefore the image is centered  */
+
+.arrow {
+  width: 50px;
+  margin-top: 10px;
+}
+
+/*******************************************************************************
+********************************************************************************
+****************************   CSS.html Layout Basics Page Styles *******************
+********************************************************************************
+*******************************************************************************/
+
+/* ---------  Floating Nav and Header --Height Collapse ------------ */
+
+.float-header-collapsed {
+  background-color: lime;
+}
+
+.float-nav-collapsed {  /* floating the ul will position the entire set of li and move them to the right or left. */
+  float: right;
+  /* if i wanted to move the whole ul to the left, I could use margin-right: Xpx.
+  margin-right: 100px;  */
+}
+
+.float-nav-collapsed li {  /* floating li list items determines the order they are displayed from left to right, or from right to left.  */
+  float: left;
+  margin-left: 12px;
+  font-size: .8em;
+}
+
+.float-h1-collapsed {
+  float: left;
+  color: blue;
+}
+
+/* ---------  Floating Nav and Header Height Collapse Fix ------------ */
+
+.float-header-fixed {
+  background-color: lime;
+}
+
+.float-nav-fixed {
+  float: right;
+}
+
+.float-nav-fixed li {
+  font-size: .8em;
+  float: left;
+  margin-left: 5px;
+  margin-right: 15px;
+  margin-top: 25px;
+}
+
+.float-h1-fixed {
+  float: left;
+  color: blue;
+}
+
+.clear-fix::after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+/*  this .banner is on the css.html page introducing stage four: CSS Layout Project  */
+.banner {
+  width: 100%;
+  height: 200px;
+  background: lime url('../img/html-sample-code.png') no-repeat center;
+  background-size: cover;
+  margin-top: 30px;
+}
+
+/*  this .banner-text is on the css.html page introducing stage four: CSS Layout Project  */
+.banner-text {
+  color: white;
+  padding-top: 1em;
+}
+
+.feat-img {
+  width: 50%;
+}
+
+.arrow-flex {
+  width: 40%;
+  align-self: center;
+  padding-bottom: 15px;
+}
+
+.column-img {
+ width: 100px;
+ margin-left: 15px;
+ margin-bottom: 10px;  /* I gave the img a hefty bottom margin to suite my taste for column appearance. */
+ margin-top: 10px;
+ padding: 10px;
+}
+
+/*******************************************************************************
+********************************************************************************
+******************************** end css layout basics page ********************
+********************************************************************************
+*******************************************************************************/
+
+
+/*******************************************************************************
+********************************************************************************
+******************************     HTML Forms styling  *************************
+********************************************************************************
+*******************************************************************************/
+
+
+.form-background {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+}
+
+.fieldset {
+  display: flex;
+  margin-bottom: 10px;
+  border: none;
+  border-top: solid 2px black;
+
+}
+
+.fieldset2 {
+  display: flex;
+  margin-bottom: 10px;
+  border: none;
+  border-top: solid 2px black;
+}
+
+/* textarea styling */
+.input {
+  margin: 0 auto;
+}
+
+/* I managed to get the text where I wanted it, but I wonder if there is a better way.  */
+.radio-text { /* .radio targets the text Under 13, and 13 and Over. */
+  margin-top: -15px;
+  margin-left: 40px;
+    /* absolute is handy for positioning content exactly when you want it; I used it in a pinch to place text.  */
+}
+
+.checkbox {
+  margin-top: -15px;
+  margin-left: 30px;
+}
+
+#under_13,
+#over_13 {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.form {
+  border: 3px solid black;
+  background: lightgrey;
+  text-align: center;
+  border-radius: 20px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-bottom: 50px;
+}
+
+.sign-up {
+  margin: 10px;
+  padding: 0;
+}
+
+label {
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: .8em;
+  margin-bottom: 10px;
+}
+
+.select-menu {
+  margin: 0 auto;
+  align-self: center;
+  border-radius: 15px;
+  background: gray;
+  color: black;
+  padding: 2px;
+  font-size: .78em;
+}
+
+#bio {
+  height: 90px;
+  width: 195px;
+}
+
+#submit-button {
+ background: lime;
+ align-self: center;
+ margin: 5px;
+ border-radius: 15px;
+}
+
+/* This is for the span element in the legend element in the fieldset element in the form element.  I gave a bit of shade to the numbers in my "Sign Up" form. */
+.number {
+  font-size: .7em;
+  padding: 2px 3px;
+  border-radius: 55%;
+  background: lime;
+  margin-right: 5px;
+  text-shadow: 1px 2px 6px rgba(8, 8, 8, .7);  /*  blur text-shadow: 1px 2px 6px rgba(8, 8, 8, .7); */
+}
+
+/********************************************************************************
+*********************************************************************************
+*****************************end HTML Forms styling *****************************
+********************************************************************************/
+
+
+/*******************************************************************************
+********************************************************************************
+**************begin JavaScript Loops, Arrays, and Objects styling **************
+********************************************************************************
+*******************************************************************************/
+
+
+.contained {
+  background: yellow;
+}
+
+#div {
+  background: lightblue;
+  text-align: left;
+}
+
+/* code snippet image styling for javascript.html and jquery-basics.html  */
+
+.dom-tree,
+.jquery-removeAndEmpty,
+.jquery-fadeIn,
+.jquery-get-set,
+.jquery-callback,
+.jquery-attr,
+.js-object-image,
+.js-array-image,
+.js-while-loop,
+.js-do-while-loop,
+.js-for-loop,
+.js-for-in-loop,
+.js-for-in-loop2,
+.js-for-in-loop3,
+.js-array-of-objects {
+  width: 95%;
+  max-width: 300px;
+  margin: 20px auto;
+  border: 4px solid black;
+}
+
+/*******************************************************************************
+********************************************************************************
+****************end JavaScript Loops, Arrays and Objects styling ***************
+********************************************************************************
+*******************************************************************************/
+
+/* *****************************************************************************
+********************************************************************************
+**********************  CSS Flexbox-Layout.html styling ************************
+********************************************************************************
+*******************************************************************************/
+/* flex, flex-3, row, row-3, flex-col-1, flex-col-2, flex-column-1, flex-column-2,
+   flex-column-3 are used throughout the website for responsive design.      */
+
+
+/* Flexbox image centering example */
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  margin: 45px auto;
+  box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+  max-width: 500px;
+}
+
+
+.flexbox-image {
+  width: 90%;
+  max-width: 400px;
+}
+
+.flex-button {
+  padding: 5px;
+  margin: 15px;
+}
+
+/* ------ Flexbox  Layout------ */
+
+ .item {
+   color: #fff;
+   padding: 15px;
+   margin: 5px;
+   background:  #3db5da;
+   border-radius: 3px;
+ }
+
+/* ------ Flexbox Navigation ------ */
+
+.main-header2 {
+  width: 100%;
+  padding: 15px;
+  background: yellow;
+  text-align: center;
+}
+
+.name2 {
+  font-size: 2em;
+  border-bottom: none;
+  margin: 10px;
+}
+
+.banner2 {
+    width: 100%;
+    padding: 10px;
+    height: 200px;
+    margin: 0px auto;
+    box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+    background: #3db5da;
+    text-align: center;
+  }
+
+/*  Three column layout main styles. The entire 3 column layout will encompass 90% of the page width. */
+
+  .container3 {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+/* Aligning items to the bottom of a column using flexbox */
+  .flex-3 {
+    background: #ededed;
+    padding: 5px;
+    border: white solid 3px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
+/*   margin-top: auto; pins the button to the bottom of the column, and align-self: flex-start; moves the button to the left of the column. */
+  .flex-button {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+
+/* formatting an headline 1 */
+.flex-two,
+.flex-three {
+  margin: 50px auto;
+}
+
+.main-nav2 {
+  list-style-type: none;
+}
+/*****************************************************************
+******************************************************************
+****************  Media Queries for the flex layout **************
+******************************************************************
+*****************************************************************/
+
+
+/* Here I am requesting that the child items be laid in a row horizontally
+  by targeting the child item of main-header2, and main-nav2 */
+
+/* additionally, laying out the two child items in the parent .row as flex items; flex-direction: row; by default  */
+  @media (min-width: 700px) {
+    .main-header2,
+    .main-nav2,
+    .row,
+    .row-3 {
+      display: flex;
+    }
+
+/* ------ flex styles ------ */
+/* the links in the .main-nav2 get some breathing room */
+  .main-nav2 li {
+    margin: 25px;
+  }
+
+/* at 700 pixels or greater, I want the two columns to take up equal width in the viewport. */
+  .flex {
+    flex: 1;
+    margin-bottom: 40px;
+  }
+
+/* creating a two-column layout at 700px up to 1024px.  Setting the columns to flex: 1 50% ensures that each of the first
+two columns will take up 50% of the viewport; the third column will wrap to a new line and intelligently fill its space. */
+      .flex-3 {
+        flex: 1 50%;
+      }
+
+/* due ot the previous rule, the third column will wrap to a new line rather than share its line equally with the other two columns in the container.  */
+      .row-3 {
+        flex-wrap: wrap;
+      }
+
+} /* end 700px media query */
+
+/*  Next, I want main-header on it's own line so I will target it and set it to flex-direction: column; */
+@media (min-width: 769px) {
+  .flex-col-1 {
+    flex: 1.5;
+  }
+
+}  /*  end media query for 769px */
+
+/* putting .main-header2 back into row context and setting the main-heading to one side and the links to the other side. */
+@media (min-width: 1025px) {
+
+/*  2 column layout example using flexbox:  goal is to have two columns at 1025px or greater, and have column 1 take up twice the space of ocllumn two. */
+  /* ------ the default flex-grow, flex: 0; for shorthand is 0.  At 700px up to
+  and including 1024px I set the flex-grow property to 1 using the shorthand, so that column one can take twice the size in the following rule. */
+  .flex-col-1 {
+    flex: 2;
+  }
+
+/*  will have the primary column grow at a rate of 1.4 times that of the other columns at 1025px or greater.  */
+  .flex-column-1 {
+    flex: 1.4;
+  }
+
+/* at this 1025px breakpoint, I set flex-basis to 0, so that the columns will not breakdown, but instead remain on the same line.
+For example, if I set the basis to 200px, then below 200 px of column width, the columns would wrap to a new line. */
+  .flex-3 {
+    flex-basis: 0;
+  }
+
+/* at 1025px and above, I want to move the second column to the left so that the primary column 1 will be in the middle, so that
+balanced is achieved.  So I set the order to -1 */
+  .flex-column-2 {
+    order: -1;
+  }
+
+} /* end media query for 1025px and greater  */
+
+/*******************************************************************************
+********************************************************************************
+***********************  end css flexbox layouts styles  ***********************
+********************************************************************************
+*******************************************************************************/
+
+/*  ----------  Absolute Positioning Example ----- */
+
+/* icon-example:  I took out the image, so would have to replace it to get this to work.  */
+  .icon-location {  /*  This is the little icon of me */
+    width: 40px;
+    position: absolute;  /*  when using the offset values, the negative units will move the element towards the offset qualifier,
+    not away, as per usual.  Example, If I set top: -50px; then the element will go outside the parent element 50px above the parent element.  Pretty cool. */
+    top: 0;
+    left: 0;
+  }
+
+/*  ---------- Float example ---------- */
+
+  .float-example {
+   width: 200px;
+   float: right;
+   margin-left: 25px;
+   margin-bottom: 30px;  /* I gave the img a hefty bottom margin to suite my taste for column appearance. */
+   padding: 10px;
+  }
+
+/*  --------  Pseudo Classes -------- */
+
+  .column-img:hover {
+    transform: scale(.5) rotate(180deg);  /*  this will increase the size of the img and rotate it 180 degrees.  */
+  }
+
+  /*****************************************************************************
+  ******************************************************************************
+  *********************  CSS Selector Styles for CSS-Selectors.html  ***********
+  ******************************************************************************
+  ******************************************************************************/
+
+  .css-selectors-buttons {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btn {
+    cursor: pointer;
+    align-self: center;
+    margin: 20px auto;
+    padding: 10px 0;
+    background: darkslategrey;
+    color: lime;
+    width: 250px;
+    height: auto;
+    border-radius: .5em;
+  }
+
+  .btn:hover {
+    opacity: .75;
+  }
+
+  .timer-div {
+    height: 70px;
+    background: black;
+    color: lime;
+    margin-bottom: 50px;
+  }
+
+/*******************************************************************************
+*******************  child-combinator selector example *************************
+*******************************************************************************/
+
+.child-selector {
+  background: yellow;
+  padding: 15px;
+  border: 2px purple solid;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: left;
+}
+/* child combinator selector example: > --This targets the h6 elements nested
+   in the div element. */
+
+.child-selector > * {
+  margin: 20px auto;
+  background: white;
+  color: tomato;
+  padding-left: 10px;
+  border-radius: 20px;
+}
+
+/*******************************************************************************
+*******************  adjacent-sibling combinator selector example **************
+*******************************************************************************/
+
+.sibling-selector {
+  background: tomato;
+  padding: 15px;
+  border: 2px purple solid;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+h4 + h4 {
+  color: lime;
+  background: black;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+/*******************************************************************************
+*******************  general-sibling combinator selector example ***************
+*******************************************************************************/
+
+.general-selector {
+  background: yellow;
+  padding: 15px;
+  margin: 20px auto;
+  border: 2px purple solid;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+h6 ~ h6 {
+  background: tomato;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.label-selectors {
+  background: lime;
+  display: block;
+  margin: 20px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*******************************************************************************
+****** Structural Pseudo-Classes: Substring Matching Attribute Selectors *******
+*******************************************************************************/
+/* We will target all of the links on the page that begin with "http:" */
+a[href^="http:"] {
+  color: #52bab4;
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+  padding-left: 25px;
+  text-shadow: none;
+}
+
+/* we will target the three links on the CSS selectors page using the 'ends with' '$' attribute selector */
+a[href$="pdf"] {
+  background-image: url('../img/icn-pdf.svg');
+}
+
+a[href$="jpg"] {
+  background-image: url('../img/icn-picture.svg');
+}
+
+a[href$="zip"] {
+  background-image: url('../img/icn-zip.svg');
+  margin-left: -7px;
+  padding-left: 24px;
+}
+
+
+/*******************************************************************************
+***********************  Element States Pseudo Class Selectors ****************
+*******************************************************************************/
+
+  /* when the input elements and textarea element has focus, we can designate css
+     properties and rules. HTML.
+     I can be more specific using the [ ] attribute type selector. */
+  input[type="text"]:focus,
+  input:focus,
+  textarea:focus {
+    border: 3px solid lime;
+  }
+
+ /* We can add css for disabled elements via the :disabled pseudo-class.  For
+    the styling to work, the element will have to be in the disabled state using
+    a disabled attribute in the HTML. */
+  :disabled {
+    background: #ddd;
+  }
+
+/* next we will target the labels that are adjacent siblings of and follow the
+   checkboxes on the html forms page using the tag element and type attribute
+   along with the :checked pseudo-class along with the adjacent sibling [+]
+   selector.  */
+  input[type="checkbox"]:checked + label {
+    font-weight: bold;
+  }
+
+/*******************************************************************************
+************************  Advanced Selectors ***********************************
+*******************************************************************************/
+
+/*********************** :nth-child Pseudo-classes ****************************/
+
+/* Inside the parentheses, we pass an argument to the :nth-child.  Odd and even
+   are two keywords we can use to target the li items. We can also use an
+   integer.  The index value starts at one.  We can also use expressions:
+   (an+b) So we tell the browser where to start by using the index value we
+   want to target in place of the b variable in the expression (an+b), then
+   we can choose which additional :nth-children to target by placing an index
+   value for a.  So (2n+3) would first target the 3rd index value, or 3rd item
+   in the list, and then target every second item that follows. The n always
+   stays the same. We can shorten the expression when a and b are certain
+   values. For example if a is 1, we can just write (n+3).  This will target
+   the 3rd index item in the list, and then every one item after. If b is 0, we
+   can write (2n).  This will first target the second item in the list and then
+   every second item.
+
+   li::nth-child(2n+1) {
+     background: lime;
+   }
+*/
+
+/*********************** :target Pseudo-classes **************************/
+
+/*  This will target those elements that are targets of the link when
+    clicked except for the first target which is set by default. */
+/*
+:target {
+  background: black;
+  color: white;
+}
+*/
+
+/* I can be more specific by incliding the particular target id.  This way, I do
+  not have to click the link; instead I predefined the target of #top, so
+  the element with the id of 'top' will be styled. */
+/*
+#top:target {
+  background: lime;
+}
+*/
+
+/*********************** :target Pseudo-elements **************************/
+/* Here I am targeting part of a class element. In the following two example, I am targeting the
+   first line and the first letter of the paragraph element with the class
+   name of pseudo-element. We use double colon for pseudo-elements, even though
+   the code will work with a single colon.  But single colons for pseudo-classes
+   will not work with double colons. Double colons should alert us that we arrow
+   working with pseudo-elements. */
+
+.pseudo-element::first-line {
+  color: tomato;
+  font-weight: bold;
+  font-size: 1.4em;
+  text-shadow: 1px 8px 8px rgba(8, 8, 8, .7);
+  line-height: 2;
+}
+
+/* Here we create a drop-cap using the :first-letter pseudo-element*/
+.pseudo-element::first-letter {
+  color: tomato;
+  background: white;
+  font-size: 80px;
+  float: left;
+  padding: 5px 10px;
+  margin: 10px 10px 0 0;
+  border-radius: 5px;
+  line-height: 1;
+  text-shadow: 1px 8px 8px rgba(8, 8, 8, .7);
+}
+
+/* *****************************************************************************
+*****************Pseudo-elements, ::before and ::after *************************
+*******************************************************************************/
+
+.d-loads {
+  margin-bottom: 30px;
+}
+
+a.zip {
+  margin-left: -6px;
+}
+
+
+/* If we want to display the words, we place them inside quotes." If we want to use a img background, we use no quotes and the url(path);
+   We can choose to add an element before and after, or one or the other by using the content: value pair.  If we want text we place
+   the text inside quotes.  If we want an image, we can place that inside the url(../path).  We can decide not to add either by listing
+   "" the empty string inside the quotes.  This way, we can style the background to create basic shapes before and after an HTML
+   element.  The before and after will not be reflected inside the HTML code, but it will still be described by the broswer. css-selectors-buttons
+   is a powerful thing. */
+
+a.jpg::before {
+  content: "JPG - ";  /* JPG will be displayed as content before the class a.jpg link. */
+  font-size: .75em;
+  margin-right: 3px;
+}
+
+
+/* here, the goal is to make the elements before and after as consistent in relationship proportion as possible.  */
+a.zip::before {
+  content: "ZIP - ";
+  font-size: .75em;
+  padding-left: 0px;
+  margin-right: 6px;
+}
+
+a.zip::after {
+  margin-right: -5px;
+}
+
+.download-gallery::before,
+.download-gallery::after {
+  border-radius: 50%;
+  background: lime;
+  width: 1em;
+  display: inline-block;
+  height: 1em;
+  content:"";
+  margin: -3px 10px;
+}
+
+/********************************** attr(someAttribute) ***********************/
+/* Here we will target the virtual element after the [a] link in the ul class
+.d-loads.  We want to display the title attribute on the html page using the
+attr(title) feature.
+*******************************************************************************/
+
+.d-loads a:after {
+  content: attr(title);
+  display: inline-block;
+  color: initial;
+  font-size: .65em;
+  margin-left: 15px;
+}
+
+/* this is the class of an image containing code for the above download gallery */
+.attr {
+  margin: 20px auto;
+  border: 4px solid lime;
+}
+
+
+/* *****************************************************************************
+********************************************************************************
+                                   jQuery-basics.html  Code
+********************************************************************************
+*******************************************************************************/
+
+/* target blank styling for the a link */
+.target-link {
+  display: block;
+  margin: 30px auto;
+}
+
+
+/* this div allows for easy center placement of the callback button */
+.callbackDiv {
+  flex: column;
+  margin: 30px auto;
+}
+
+/* this button will execute a callback function that will fadeOut the .box div */
+.callback-button {
+  margin: auto;
+  align-self: center;
+}
+
+/* fading box styling */
+.box {
+  font-family: sans-serif;
+  width: 300px;
+  height: 300px;
+  margin: 1em auto;
+  background: tomato;
+}
+
+
+/* get-set paragraph styles */
+
+.get-set {
+  color: red;
+  font-size: 1.2em;
+}
+
+
+/* *****************************************************************************
+********************************************************************************
+                                   media queries for CSS-Selectors
+********************************************************************************
+*******************************************************************************/
+
+@media (min-width: 769px) {
+  .css-selectors-buttons {
+    display: inline-block;
+  }
+  .block {
+    display: block;
+    margin: auto;
+  }
+
+
+}
+/*******************************************************************************
+********************************************************************************
+****************************  end CSS Selectors Styles *************************
+********************************************************************************
+*******************************************************************************/
+
+
+/*******************************************************************************
+********************************************************************************
+****************************  Media Queries  ***********************************
+********************************************************************************
+*******************************************************************************/
+
+/*  An Example of creating a media query using the media feature min-width for targeting a phone's orientation in landscape mode. ------- */
+@media only screen and (min-width: 700px), only screen and (min-width: 700px) and (orientation: landscape)  {  /*  The "or" boolean can be
+  represented with a (comma) to seperate the conditions; if any condition is true, them the media query will run the css rules. */
+
+  .arrow {
+    width: 25px;
+  }
+
+} /* end 700px media query */
+
+/* ------ This will target screens with 769px width and wider ------- */
+@media (min-width: 769px) {
+
+/* -------- Main Content -------- */
+  .container {
+    width: 85%;
+    max-width: 1150px;  /* the div element with the class "container" will not exceed 1000px width.  */
+    margin: 0 auto;
+  }
+
+/* -------- css.html Column Layout ------- */
+
+  .column_1,
+  .column_2 {
+    display: inline-block;
+    width: 50%;
+    margin-right: -4px;
+    vertical-align: top;  /* I set the value to top so that my two columns will always be flush with each other no matter the browser viewport size or device used.  */
+    padding-left: 1em;  /* padding-left and right at 1em to create the column gutters so that the columns can breathe a bit */
+    padding-right: 1em;
+  }
+
+  .column_3 {
+    display: inline-block;
+    width: 40%;
+    margin-right: -4px;
+    vertical-align: top;  /* I set the value to top so that my two columns will always be flush with each other no matter the browser viewport size or device used.  */
+    padding-left: 1em;  /* padding-left and right at 1em to create the column gutters so that the columns can breathe a bit */
+    padding-right: 1em;
+  }
+
+  .column_4 {
+    display: inline-block;
+    width: 60%;
+    margin-right: -4px;
+    vertical-align: top;  /* I set the value to top so that my two columns will always be flush with each other no matter the browser viewport size or device used.  */
+    padding-left: 1em;  /* padding-left and right at 1em to create the column gutters so that the columns can breathe a bit */
+    padding-right: 1em;
+  }
+
+  .column-img {
+   width: 70px;
+   float: left;
+   margin-left: 15px;
+   margin-bottom: 10px;  /* I gave the img a hefty bottom margin to suite my taste for column appearance. */
+   padding: 10px;
+  }
+
+  .column-img:hover {
+    transform: scale(.5) rotate(180deg);  /*  this will increase the size of the img and rotate it 180 degrees.  */
+  }
+
+/*  ------ css.html Floating Column Challenge ------- */
+
+  .float-challenge {
+    float: left;
+    padding-left: 1em;  /* padding-left and right at 1em to create the column gutters so that the columns can breathe a bit */
+    padding-right: 1em;
+  }
+
+  .column-5 {
+    width: 40%;
+    margin-right: -4px;
+    vertical-align: top;  /* I set the value to top so that my two columns will always be flush with each other no matter the browser viewport size or device used.  */
+  }
+
+  .column-6 {
+    width: 60%;
+    margin-right: -4px;
+    vertical-align: top;  /* I set the value to top so that my two columns will always be flush with each other no matter the browser viewport size or device used.  */
+  }
+
+  .layout-project {
+    float: left;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+
+/*****************************  css-flexbox-layout.html *******************************/
+
+
+    .col-1,
+    .col-2 {
+      width: 30%;
+      margin-right: 0px;
+  }
+
+} /* end 769px media query */
+
+
+@media (min-width: 890px) {
+  /*  font-size of drop-down menu will increase at 890px width and greater */
+  .nav-link {
+    font-size: .9em;
+  }
+
+  /*  font-size of in-page-nav menu will increase at 890px width and greater */
+  .in-page-nav {
+    font-size: 1em;
+  }
+
+} /* end 890px media query */
+
+
+/* --------- For screens 1025px and larger --------- */
+
+@media (min-width: 1025px) {
+
+/*****************************  css-flexbox-layout.html *******************************/
+
+  .col-1 {
+    width: 34%;
+  }
+
+  .col-2,
+  .col-3  {
+    width: 33%;
+  }
+
+  /* ---------- Fixed Positioning Example ------------ */
+  /* Using fixed position to keep the main-header and nav at the top of the viewport regardless of where they are on the page. */
+    .navbar {
+      position: fixed;
+      width: 100%;     /* I set width to 100% because when position is set to fixed, the main-header will only be as wide as its content. */                    /* So I override this to have a nice menu that stays with the user as they scroll down. */
+      top: 0;         /* This is to ensure that the main-header container stays put at the top of the page and follows the user as they scroll. */
+      z-index: 1000;
+    }
+
+/* setting the margin for the page title to the height of the main nav element so that is isn't overriden upon initial navigation */
+  #top {
+    margin-top: 58px;
+  }
+
+}

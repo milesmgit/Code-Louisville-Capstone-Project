@@ -1,0 +1,241 @@
+
+<!-- ================================================================================================================================================================================
+
+     ================================================================================================================================================================================ -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Web Design</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">  <!--I list this css file second in case I need to override the normalize.css file, as the last file listed takes precedence in the css stack -->
+  </head>
+
+  <body>
+
+    <!-- main nav consisting of dropdown menus and collapsing menu using bootstrap -->
+    <nav class="navbar navbar-expand-md navbar-light bg-info">
+      <a class="navbar-brand order-1" href="index.html">&lt;&nbsp;Web <span class="design_span">&nbsp;Design&nbsp;</span> &gt;</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              General Web Design
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="jquery-basics.html">jQuery Basics</a>
+              <div class="dropdown-divider"></div>
+              <a href="bootstrap-4-basics.html">Bootstrap 4 Basics</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              HTML
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="html.html">HTML Forms</a>
+
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              CSS
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="css.html">CSS Basics</a>
+              <div class="dropdown-divider"></div>
+              <a href="responsive-layouts.html">CSS Responsive Layouts</a>
+              <div class="dropdown-divider"></div>
+              <a href="css-flexbox-layout.html">CSS Flexbox Layout</a>
+              <div class="dropdown-divider"></div>
+              <a href="css-selectors.html">CSS Selectors</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              JavaScript
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="javascript.html">JavaScript: Loops Arrays and Objects</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Background Color
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="#" onclick="lightblue()">Light Blue</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" onclick="lightgrey()">Light Grey</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" onclick="white()">White</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- begin wrap -->
+    <div class="container" id='option'>
+      <!-- begin in-page-nav div -->
+      <div>
+        <h1 id="top">JavaScript: Loops, Arrays and Objects</h1>
+        <ul class="in-page-nav">
+          <li><a href="#one">Stage One: Simplify Repetitive Tasks with Loops</a></li>
+          <li><a href="#two">Stage Two: Tracking Multiple Items with Arrays</a></li>
+          <li><a href="#three">Stage Three: Tracking Data Using Objects</a></li>
+        </ul>
+      </div> <!-- end in-page-nav div -->
+
+      <!-- begin stage one div -->
+      <div>
+        <h2 id="one">Stage One: Simplify Repetitive Tasks with Loops</h2>
+        <h3>Loops</h3>
+        <p>The 'while loop' repeats a block of code until the condition inside the parentheses is no longer true; the scripts.js file will showcase the various lessons. If the condition to test for begins as false, the 'while' loop will never run. Below is an example of a 'while loop'.</p>
+        <img class="js-while-loop" src="img/js-while-loop.png" alt="JavaScript 'While Loop' Example Image">
+        <p>The 'do-while loop' will always run at least once; at the end of its first run, it will then check the 'while' condition -- if true, the code in the 'do while' block continues to execute again. Below is an example of a 'do-while loop'.</p>
+        <img class="js-do-while-loop" src="img/js-do-while-loop.png" alt="JavaScript 'Do-While Loop' Example Image">
+        <p>The 'for loop' does basically the same thing as the preceding two loops, but just in a different way.  They are good for working with arrays and work best for those loops that need to be run a specific amount of times. Below is an example of a 'for loop'.</p>
+        <img class="js-for-loop" src="img/js-for-loop.png" alt="JavaScript 'For Loop' Example Image">
+        <p>As with the return statement, code coming after a 'break;' statement will never run.  'Break' exits the loop immediately.</p>
+        <p>Refactoring is what programmers call rewriting and streamlining a program for efficientcy. Writing better comments, increasing the speed of execution, and streamlining redundant code are common goals of refactoring. Loops can be useful for refactoring redundant code.</p>
+      </div> <!-- end stage one div -->
+
+      <!-- begin stage 2 div -->
+      <div>
+        <h2 id="two">Stage Two: Tracking Multiple Items with Arrays</h2>
+        <!-- Begin three-column layout using flexbox -->
+        <div class="row-3">
+          <!-- begin flex-column-1 div -->
+          <div class="flex-column-1 flex-3">
+            <h3>What is an Array</h3>
+            <p>An array is what's known as a data structure: a way to store and organize information. Example of an array: var someList = ['carrots', 30, 'milk'];</p>
+          </div>  <!-- end flex-column-1 div -->
+
+          <!-- begin flex-column 2 div -->
+          <div class="flex-column-2 flex-3">
+            <h3>Accessing Items in an Array</h3>
+            <p>To access a particular item value in an array use the corresponding index value:  console.log(someList[0]); will return the first item 'carrots' in the someList array.  The return value does not print the quotes to the screen, just the letters enclosed in quotes. We start counting with 0 to represent the first position.</p>
+            <p>If we try to access a item value that is not in the list, the console will return 'undefined'.  Example: someList[20] will return undefined in the console if there are only 20 items in the list.  19 represents the 20th item, so 20 would represent an undefined 21st item.</p>
+          </div>  <!-- end flex-column-2 div -->
+
+          <!-- begin flex-column 3 div -->
+          <div class="flex-column-3 flex-3">
+            <h3>Adding Data to Arrays</h3>
+            <p>Using the push method allows us to add ones or more items to the end of an array.  Example syntax: nameOfArray.push('apple', 'butter', 'cheese');</p>
+            <p>someList.push('apple', 'butter', 'cheese'); will add the string 'apple' to the fourth position 'butter' to the fifth, and 'cheese' to the sixth position in the someList array.</p>
+            <p>Unshift works likes the push method, but it adds items to the beginning of the array.</p>
+          </div>  <!-- end flex-column-3 div -->
+        </div> <!-- end three column row layout div -->
+
+        <!-- Begin two-column layout using flexbox -->
+        <div class="row">
+          <!-- begin flex-column-1 div -->
+          <div class="flex-col-1 flex">
+            <h3>Removing Items from Arrays</h3>
+            <p>The pop method removes the last item in the array list and returns that value.  If you want to hold that value, you can declare a var and set it equal to the arrayListName.pop();</p>
+            <p>The shift method will remove the first item in the list and return its value.</p>
+            <p>Handy shortcut for the console:  Press the up arrow will cycle thru the previous commands beginning with the last one used, going backward.</p>
+          </div>  <!-- end flex-col-1 div -->
+
+          <!-- begin flex-column 2 div -->
+          <div class="flex-col-2 flex">
+            <h3>Using For Loops with Arrays</h3>
+            <p>We can use the 'for' loop and the 'length' property for the condition to cycle thru students array and print to the screen. We use the length property to accurately determine how many items are currently in the array.  This allows us to use that property in the condition so that we run the loop the required number of times.</p>
+            <p>We can hold the value of the array in a variable, and use the join method to print out the list seprated by the characters of our choosing. The last item will not be seperated by any characters.</p>
+            <p>We can use the concat method to combine two arrays; the first array in the syntax will be printed first followed by the array called inside the parentheses.  Example: var currentStudents.concat(newStudents);</p>
+            <p>It is wise to write short bits of code and then test.  This method of coding makes it easier to spot errors.</p>
+          </div>  <!-- end flex-col-2 div -->
+        </div> <!-- end row 2-column layout div -->
+
+        <h3>Two-Dimensional Arrays</h3>
+        <p>A two-dimensional array is an array within an array.  A list os list(s). To access a value in a two-dimensional array: first we access the array using its index value and then we access the item in that array using its index value.</p>
+        <p>Below is an example of a two-dimensional array.</p>
+        <img class="js-array-image" src="img/js-array-image.png" alt="JavaScript Array Example Image">
+      </div> <!-- end stage 2 div -->
+
+      <!-- begin stage three div -->
+      <div>
+        <h2 id="three">Stage Three: Tracking Data Using Objects</h2>
+        <!-- Begin three-column layout using flexbox -->
+        <div class="row-3">
+          <div class="flex-column-1 flex-3">
+            <h3>The Object Literal</h3>
+            <p>An object has properties and methods; properties are variables belonging to the object and methods are somthing that can be done to the object.</p>
+            <p>To create an object, use this syntax:  var objectName = { key: "Value", key: [89, 85, 40] };  The word 'key' represents the property/value pair.  You can name it as you would a normal variable; don't start with a number, and use lowercase, uppercase, $, _ and numbers.  It is good to use adequate white space and line spaces when formatting the object to make it easier to read.</p>
+            <p>Below is an example of a properly formatted object. ‘name:’ is the 'key', and "Dave" is the 'key value'. ‘grades:’ is the 'key', and [80, 85, 90, 95] is the 'key value'. </p>
+            <img class="js-object-image" src="img/js-object-image.png" alt="JavaScript Object Example Image">
+          </div>  <!-- end flex-column-1 div -->
+
+          <!-- begin flex-column 2 -->
+          <div class="flex-column-2 flex-3">
+            <h3>Accessing Object Properties</h3>
+            <p>Example object:  var person = { name: "Dave" }; You may use brackets: alert(person['name']); or dot notation: alert(person.name); to access an object.</p>
+            <p>To set a key property/value pair, simply type the object variable-name, and use dot notation using the key-name along with an equals sign. Example: person.name = "Matt";
+            <p>You can also add new properties to an object by adding a new key name by using dot notation. Example: person.country = "Bolivia";</p>
+            <p>We can use methods of objects by using the period between the object and method. Example:  person.skills.join(', ');  This will take the value of the property of skills, which is an array in this example--since it is an array, we can use the .join method(', ') to print the list of skills with a comma and a space between each one, save the last skill.</p>
+            <p>Also, if we want to target a specific skill, we can use its index number.  console.log(person.skills[2]); would return the 3rd item in the skills array.</p>
+          </div>  <!-- end flex-column-2 div -->
+
+          <!-- begin flex-column 3 -->
+          <div class="flex-column-3 flex-3">
+            <h3>Using 'for in" to Loop Through an Object's Properties</h3>
+            <p>Syntax of a 'for in' loop:  for ( var keyProperty in student) { programming statements; }  Where student would be the object and keyProperty is the variable that will hold the looped key property names. The key properties will be returned.  Below is the formatted example.</p>
+            <img class="js-for-in-loop" src="img/js-for-in-loop.png" alt="JavaScript 'for in' Loop Example Image">
+            <p>To access the key property values, we use bracket notation. Example:  for (var keyProperty in student) { console.log(student[keyProperty]); } Below is a formatted example syntax that returns the looped values of the keyProperties in the loop.</p>
+            <img class="js-for-in-loop2" src="img/js-for-in-loop2.png" alt="JavaScript 'for in' Loop with Key Property Values Returned Example Image">
+            <p>We must use bracket notation to call a property value because dot notation (example: student.keyProperty) will cause the interpreter to look for a property named labelled 'keyProperty'.  So it will return undefined.  If we named our keyProperty variable 'keyProperty' then the interpreter will return all of the property names if we request them like this: for (keyProperty in student) {console.log(keyProperty)}.</p>
+            <p>If we want the interpreter to return the keyProperty names AND values seperated by a colon, we can type this:  console.log(keyProperty, ': ', student[keyProperty]);  Below is an example of the formatted syntax.</p>
+            <img class="js-for-in-loop3" src="img/js-for-in-loop3.png" alt="JavaScript 'for in' Loop Return of Key Property Names AND Values Example Image">
+          </div>  <!-- end flex-column-3 div -->
+        </div> <!-- end row three column layout div -->
+
+        <!-- Begin two-column layout using flexbox -->
+        <div class="row">
+          <!-- begin flex-column-1 div -->
+          <div class="flex-col-1 flex">
+            <h3>Mixing and Matching Arrays and Objects</h3>
+            <p>It is common to make an array of objects; it is helpful to use clear key names for the values we seek.  Objects are best for this purpose. Below is the syntax for an array of objects.</p>
+            <img class="js-array-of-objects" src="img/js-array-of-objects.png" alt="JavaScript Array of Objects Example Image">
+            <p>Accessing the first question in a for loop requires this syntax:  questions[i].question; because question is the property name of the [i] index item in the questions array of objects.  Likewise, we could use questions[i].answer to access the answer property of the [i] index item in the array of objects.</p>
+          </div>  <!-- end flex-col-1 div -->
+
+          <!-- begin flex-column 2 -->
+          <div class="flex-col-2 flex">
+            <h3>JavaScript Object Notation: JSON</h3>
+            <p>JSON is a string that contains keyProperties and value pairs.  JSON can be formatted to appear as an Object for ease of human understanding.  It allows servers to 'talk' to each other.</p>
+          </div>  <!-- end flex-col-2 div -->
+        </div> <!-- end row 2-column layout div -->
+      </div> <!-- end stage three div -->
+    </div>  <!-- end wrap container div -->
+
+    <!-- bg-info is bootstrap reference for a blue color-->
+    <footer class="main-footer bg-info">
+      <span>&copy; 2017 Matthew Miles</span>
+      <a href='#top' class='to-top'>To top</a>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+
+</html>
